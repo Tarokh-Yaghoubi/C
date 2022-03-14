@@ -6,5 +6,5 @@
 int main(void)
 {
     string answer = get_string("What is your name : ");
-    printf("Your name is : %s \n", answer);
+    printf("Hello, %s \n", answer);
 }
