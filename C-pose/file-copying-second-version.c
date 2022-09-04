@@ -8,6 +8,8 @@ int main()
 	while ((c = getchar()) != EOF) {
 
 		putchar(c);
+		printf("\n");
+		printf("EOF %d\n", EOF);
 	}
 
 }
