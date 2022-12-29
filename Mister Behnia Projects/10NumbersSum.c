@@ -2,6 +2,9 @@
 
 int main()
 {
+
+	// third program - mixtured with program five and six
+
 	int arr[10];
 	int i, number, sum = 0;
 	i = 0;

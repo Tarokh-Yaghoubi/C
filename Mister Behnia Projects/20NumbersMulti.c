@@ -2,6 +2,8 @@
 
 int main()
 {
+	// fourth program - mixtured with program five and six
+
 	int multi_array[20];
 	int i, multiplication = 1;
 	int number;
