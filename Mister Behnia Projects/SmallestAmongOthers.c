@@ -2,6 +2,10 @@
 
 int main()
 {
+	//  Program number 10 and 9 
+	/* I WROTE THIS INSTEAD OF PROGRAM NUMBER 8 */
+	// A better version of Program number 8
+
 	int i, number;
 	int user_number;
 
