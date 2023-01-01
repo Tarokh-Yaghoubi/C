@@ -2,9 +2,6 @@
 #include <string.h>
 #include <stdlib.h>
 
-#define MAX_SIZE 10
-
-
 
  /*
  
@@ -50,8 +47,6 @@ int main()
             if (max < container[i])
             {
                 max = container[i];
-              //  printf(" %d ", max);
-
             }
 
         }
@@ -65,7 +60,7 @@ int main()
 
         }
         pos = pos_max;
-        printf(" new arr : %d ", container[pos]);
+        printf(" %d ", container[pos]);
 
         if (pos < 0 || pos > arr_size)
         {
@@ -85,7 +80,7 @@ int main()
         }
 	}
   
-    printf("\narr size is : %d\n", arr_size);
+    printf("\n arr size is : %d\n", arr_size);
        
 	return 0;
 }
