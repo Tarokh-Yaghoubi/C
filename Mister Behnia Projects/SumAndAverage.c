@@ -5,6 +5,7 @@ int main()
 {
 	// Program number 13 
 
+	?
 
 	int i, numbers;
 	int sum = 0, average;

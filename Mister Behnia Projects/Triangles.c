@@ -20,4 +20,5 @@ int main()
 		printf("One of the angles is zero");
 
 	return 0;
+
 }
