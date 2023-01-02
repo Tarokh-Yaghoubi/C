@@ -4,6 +4,13 @@
 
 int main(int argc, char* argv[])
 {
+	/* 
+	
+	Program number 19 , take two different times and calculate the sum
+	{ Tarokh Yaghoubi }
+		
+	*/
+
 	char max_hour, max_min, max_sec;
 	max_hour = 24, max_min = 59, max_sec = 59;
 
@@ -26,3 +33,4 @@ int main(int argc, char* argv[])
 	printf("%d %d %d\n", new_hour, new_minute, new_second);
 	return 0;
 }
+
