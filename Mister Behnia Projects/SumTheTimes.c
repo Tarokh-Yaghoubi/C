@@ -24,9 +24,13 @@ int main(int argc, char* argv[])
 
 	// printf("%d", atoi("48"));
 						// time 14 16 56 13 24 28 => 
-	int new_hour = atoi(first_hour) % atoi(second_hour);
-	int new_minute = atoi(first_minute) % atoi(second_minute);
-	int new_second = atoi(first_second) % atoi(second_second); 
+	int new_hour = atoi(first_hour) + atoi(second_hour);
+	int new_minute = atoi(first_minute) + atoi(second_minute);
+	int new_second = atoi(first_second) + atoi(second_second);
+	new_hour = new_hour % 24;
+	new_minute = new_minute % 60;
+	new_second = new_second % 60;
+
 
 
 	printf("---------------------------\n");
