@@ -2,9 +2,18 @@
 #include <stdlib.h>
 #include <string.h>
 
+/*
+
+project number 21
+detect the date
+if the date is valid or not ;
+
+*/
+
 
 int main()
 {
+
 	int day, month, year;
 	month = day = year = 0;
 
