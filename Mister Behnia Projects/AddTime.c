@@ -7,9 +7,11 @@
 
 /*
 
-{ A program for time addition
-program number 18 or 19 i guess 
-this is the 19th program i have written in C programming language }
+{ 
+
+    A program for time addition (AddTime.c)
+    program number 19 .
+    this is the 19th program i have written in C programming language }
 
 */
 
@@ -29,7 +31,7 @@ int main(void)
     printf("Enter the first hour and minute and also second : .. \n");
     scanf("%d %d %d", &current_hour, &current_minute, &current_second);
     
-    if (current_hour <= 24 && current_minute < 60 && current_second < 60)
+    if (current_hour <= 24 && current_hour >= 0 && current_minute < 60 && current_minute >= 0 && current_second < 60 && current_second >= 0)
         printf("SET THE TIME TO  ->  ( %d:%d:%d )\n", current_hour, current_minute, current_second);
 
     else
