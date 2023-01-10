@@ -19,6 +19,7 @@ struct theDate {
 
 	int finMonth;
 	int finDay;
+
 };
 
 int main(int argc, char* argv[])
