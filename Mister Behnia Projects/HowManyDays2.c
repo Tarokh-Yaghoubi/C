@@ -89,11 +89,11 @@ int dayspassed(int year, int month, int day)
 	{
 		date.finMonth = month;
 
-		if (month >= 1 && month <= 6)
+		if (month >= 1 && month < 6)
 		{
 			date.finDay = (month - 1) * 31 + day;
 		}
-		else if (month > 6 && month <= 12)
+		else if (month >= 6 && month <= 12)
 		{
 			date.finDay = (6 - 1) * 31;
 			printf("-------------------\n");
@@ -101,9 +101,10 @@ int dayspassed(int year, int month, int day)
 			printf("-------------------\n");
 			container = month - 6;
 			printf("first container value : %d \n", container);
-			container = container * 30 + day;
+			container = (container * 30) + day;
+			container++;
 			printf("\nsecond : %d \n", container);
-
+			 
 			date.finDay += container;
 			printf("\nfinal day : %d\n", date.finDay);
 		}
@@ -124,4 +125,3 @@ int dayspassed(int year, int month, int day)
 	}
 
 }
-
