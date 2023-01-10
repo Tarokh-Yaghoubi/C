@@ -13,7 +13,7 @@ since the beggining of the year .
 
 */
 
-void dayspassed(int*, int*, int*);
+int dayspassed(int*, int*, int*);
 
 struct theDate {
 
@@ -39,7 +39,7 @@ int main(int argc, char* argv[])
 	return 0;
 }
 
-void dayspassed(int* day, int* month, int* year)
+int dayspassed(int* day, int* month, int* year)
 {
 	int container; container = 0;
 	struct theDate date;
@@ -59,8 +59,8 @@ void dayspassed(int* day, int* month, int* year)
 			date.finDay += container;
 		}
 
-		printf("About (%d) days has past since the beggining of the year\nnow we are in the (%d)'th month \n", (date.finDay), (date.finMonth));
-
+		// printf("About (%d) days has past since the beggining of the year\nnow we are in the (%d)'th month \n", (date.finDay), (date.finMonth));
+		return date.finDay;
 	}
 	else
 	{
@@ -68,7 +68,8 @@ void dayspassed(int* day, int* month, int* year)
 		sleep(2);
 		printf("the program is exiting \t\t you ruined everything !! \n");
 		sleep(2.5);
-		exit(0);
+
+		return -1;
 
 	}
 
