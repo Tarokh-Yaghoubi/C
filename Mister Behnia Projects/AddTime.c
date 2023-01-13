@@ -64,20 +64,22 @@ int main(void)
         final_hour = current_hour + addition_hour;
     }
 
-    if (current_minute + addition_minute > 60)
+    if (current_minute + addition_minute >= 60)
     {
         final_minute = current_minute + addition_minute;
         final_minute = final_minute - 60;
+        final_hour++;
     }
     else
     {
         final_minute = current_minute + addition_minute;
     }
 
-    if (current_second + addition_second > 60)
+    if (current_second + addition_second >= 60)
     {
         final_second = current_second + addition_second;
         final_second = final_second - 60;
+        final_minute++;
     }
     else
     {
