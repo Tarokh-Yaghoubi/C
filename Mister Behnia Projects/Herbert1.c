@@ -2,25 +2,22 @@
 
 #include <string.h>
 
-int is_in(char* s, char c);
+int is_in(const char* str);
 
 int main()
 {
-	char* str = "tarokh is a friend of jay and jay is the best friend he ever had";
-	char p = 'j';
+	char* str = "tarokh is a boy";
 
-	printf("%d ", is_in(str, p));
+	is_in(str);
 
 }
 
-int is_in(char* s, char c)
+int is_in(const char* str)
 {
-	while (*s)
+	while (*str)
 	{
-		if (*s == c) return 1;
-		else s++;
-		
+		if (*str == ' ') printf("%c", '-');
+		else printf("%c", *str);
+		str++;
 	}
-	return 0;
-	// gets_s
 }
