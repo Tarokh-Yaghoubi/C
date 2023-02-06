@@ -38,7 +38,8 @@ int main(int argc, char* argv[])
 	// Write your code here
 	uint8 buffer[10 + 1] = { 0 };
 	strcpy(buffer, "12");
-	printf("%s ",PadLeft(buffer, 0));
+	PadLeft(buffer, 25);
+	puts(buffer);
 
 	return 0;
 }
