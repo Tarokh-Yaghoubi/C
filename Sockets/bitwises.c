@@ -13,6 +13,7 @@ int main(void)
 		i = i << 1;
 		printf("the multiplied %d is : %d\n", j, i);
 	}
+	printf("\n");
 
 	for (j = 0; j < 4; j++)
 	{
