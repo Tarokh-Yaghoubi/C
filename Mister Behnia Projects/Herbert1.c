@@ -56,4 +56,3 @@ void PadLeft(uint8* Buffer, const uint8 finalLength)
 
 }
 
-
