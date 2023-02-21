@@ -38,7 +38,7 @@ int main(int argc, char* argv[])
 {
 	// Write your code here
 
-	uint8 buffer[10 + 1] = { 0 };
+	/* unsigned char */ uint8 buffer[10 + 1] = {0}; /* 00000000012 */
 	strcpy(buffer, "12");
 	PadLeft(buffer, 25);
 	puts(buffer);
