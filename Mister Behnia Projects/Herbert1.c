@@ -37,6 +37,7 @@ void PadLeft(uint8* Buffer, const uint8 finalLength);
 int main(int argc, char* argv[])
 {
 	// Write your code here
+
 	uint8 buffer[10 + 1] = { 0 };
 	strcpy(buffer, "12");
 	PadLeft(buffer, 25);
@@ -55,4 +56,3 @@ void PadLeft(uint8* Buffer, const uint8 finalLength)
 	memcpy(Buffer, finalBuffer, finalLength);
 
 }
-
