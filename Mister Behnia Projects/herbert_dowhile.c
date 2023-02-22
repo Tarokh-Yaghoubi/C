@@ -16,16 +16,21 @@
 
 */
 
+#include <stdlib.h>
 
 #include <stdio.h>
 #include <string.h>
 
 void break_func(void);
 void menu(void);
+int spaces(void);
+
 
 int main(int argc, char* argv[])
 {
-	// write your code here 
+	// write your code here
+	spaces();
+
 	break_func();
 	menu();
 	int num = 0;
@@ -35,10 +40,9 @@ int main(int argc, char* argv[])
 	} while (num > 100);
 
 	printf("The end of the loop \n");
-
+	
 	return 0;
 }
-
 
 
 void menu(void)
@@ -71,8 +75,14 @@ void menu(void)
 		case '3':
 			printf("3 - Display spelling errors \n");
 			break;
+
+		case '0':
+			exit(0);
+
 		}
+
 		x++;
+		
 		if (x == 4)
 			printf("too much attempts \n");
 		
@@ -90,4 +100,27 @@ void break_func(void)
 			break;
 	}
 	printf("X is : %d \n", x);
+}
+
+int spaces(void)
+{
+	// This is how continue works 
+
+
+	char s[80], * str;
+	int space;
+
+	printf("Enter a string : ");
+	gets(s);
+	str = s;
+
+	for (space = 0; *str; str++)
+	{
+		if (*str != ' ')
+			continue;
+		space++;
+	}
+	printf("Number of white spaces : %d \n", space);
+
+	return 0;
 }
