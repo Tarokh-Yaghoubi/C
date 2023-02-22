@@ -35,16 +35,136 @@
 		Note : ! In ' C ' arrays start at index number 0 'zero'
 */
 
+
 #include <stdio.h>
 #include <string.h>
 
+int testfuncs(void);
+
 int main()
 {
+	
+	// How Arrays Are Defined And How They Work 
+
 	int x[100];
 	int t;
 
 	for (t = 0; t <= 99; t++) x[t] = t;
 	for (t = 0; t <= 99; t++) printf(" %d ", x[t]);
+	printf("\n\n done \n\n");
+
+	testfuncs();
+
+	return 0;
+}
+
+/*
+
+		Arrays Size :
+		total bytes = sizeof(base type) × length of array
+
+*/
+
+
+/*
+
+		You can generate a pointer to the first element of an array by simply specifying the array name, 
+		without any index .
+
+		int* p;
+		int sample[10];
+
+		Note :
+
+		p = sample;  -> this assigns 'p' the address of the first element of sample .
+		you can also specify the address of the first element of sample using &
+		'sample' and &sample[0] are the same , anyway in professional C programs you 
+		rarely see &sample[0].
+*/
+
+/*
+
+		You cannot pass an array as an argument to a function in C programming . 
+		You can ! but their are three ways to do it :
+		1 - Pass the array as a pointer
+		2 - Pass the array with the size specified
+		3 - Pass the array without its size
+
+		void func1(int *x) -> pointer
+		void func1(int x[10]) -> sized array
+		void func1(int x[]) -> unsized array
+
+		As you can see the length of the array does not matter as of the function is concerned 
+		because C does not have bound checking 
+*/
+
+/* STRINGS IN C PROGRAMMING  */		
+
+
+// In C , a string is a null-terminated character array , the null-terminated string is the only type of string defined by C .
+
+/*
+
+		some notes on C strings : 
+
+		When declaring a character array that will hold a string, you need to declare it to be one character
+		longer than the largest string that it will hold. For example, to declare an array str that can hold a
+		10-character string, you would write :
+
+		char str[11];	->		Specifying 11 for the size makes room for the null at the end of the string.
+
+
+*/
+
+/*	  { a wide range of functions that manipulate strings in C programming } 
+
+
+			Name				Function
+		
+		strcpy(s1, s2)		Copies s2 into s1
+		
+		strcat(s1, s2)		Concatenates s2 onto the end of s1
+		
+		strlen(s1)		    Returns the length of s1
+		
+		strcmp(s1, s2)      Returns 0 if s1 and s2 are the same; less than 0 if s1 < s2; greater than 0 if s1 > s2
+		
+		strchr(s1, ch)		Returns a pointer to the first occurrence of ch in s1
+		
+		strstr(s1, s2)		Returns a pointer to the first occurrence of s2 in s1
+
+		Note : ! these functions use the standard header , - <string.h> -  
+*/
+
+int testfuncs(void)
+{
+	char s1[80], s2[80];
+
+	printf("Enter the s1 : \n");
+	gets(s1);
+	printf("Enter the s2 : \n");
+	gets(s2);
+
+	printf("Lengths : .. %d %d \n", strlen(s1), strlen(s2));
+
+
+	/*	
+	
+		Remember, strcmp( ) returns false if the strings are equal. Be sure to use the logical ! operator to 
+		reverse the condition, as just shown, if you are testing for equality.
+	
+	*/
+
+	if (!strcmp(s1, s2)) printf("The strings are equal \n");
+
+
+	strcat(s1, s2);
+	printf(" %s \n", s1);
+
+	strcpy(s1, "This is a test of how copy works \n");
+
+	if (strchr("tarokh is a good programmer", 't')) printf("t is in s1 \n");
+	if (strstr(s2, "programmer")) printf("found programmer in s2 \n");
 
 	return 0;
 }
