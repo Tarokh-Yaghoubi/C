@@ -106,6 +106,12 @@ int spaces(void)
 {
 	// This is how continue works 
 
+	/*
+	
+	Each character is tested to see if it is a space. If it is not, the continue statement forces the for to 
+	iterate again. If the character is a space, space is incremented
+	
+	*/
 
 	char s[80], * str;
 	int space;
@@ -124,3 +130,4 @@ int spaces(void)
 
 	return 0;
 }
+
