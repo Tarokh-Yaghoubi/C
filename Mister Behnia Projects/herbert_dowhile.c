@@ -20,11 +20,13 @@
 #include <stdio.h>
 #include <string.h>
 
+void break_func(void);
 void menu(void);
 
 int main(int argc, char* argv[])
 {
 	// write your code here 
+	break_func();
 	menu();
 	int num = 0;
 
@@ -75,4 +77,17 @@ void menu(void)
 			printf("too much attempts \n");
 		
 	} while (ch != '1' && ch != '2' && ch != '3' && x != 4);
+}
+
+void break_func(void)
+{
+	
+	int x;
+	x = 0;
+	for (; x <= 100; x++)
+	{
+		if (x == 15)
+			break;
+	}
+	printf("X is : %d \n", x);
 }
