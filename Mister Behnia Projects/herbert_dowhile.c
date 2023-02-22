@@ -15,3 +15,64 @@
 	The do-while loop iterates until the condition becomes false .
 
 */
+
+
+#include <stdio.h>
+#include <string.h>
+
+void menu(void);
+
+int main(int argc, char* argv[])
+{
+	// write your code here 
+	menu();
+	int num = 0;
+
+	do {
+		scanf("%d", &num);
+	} while (num > 100);
+
+	printf("The end of the loop \n");
+
+	return 0;
+}
+
+
+
+void menu(void)
+{
+	// the menu function , using a do-while for test 
+	
+	char ch;
+	int x = 0;
+	printf("1 - Check Spelling \n");
+	printf("2 - Correct spelling errors \n");
+	printf("3 - Display spelling errors \n");
+	printf("	Enter your choice : \n");
+
+	do
+	{
+		ch = getchar();
+		
+		
+
+		switch (ch)
+		{
+		case '1':
+			printf("1 - Check Spelling \n");
+			break;
+		
+		case '2':
+			printf("2 - Correct spelling errors \n");
+			break;
+
+		case '3':
+			printf("3 - Display spelling errors \n");
+			break;
+		}
+		x++;
+		if (x == 4)
+			printf("too much attempts \n");
+		
+	} while (ch != '1' && ch != '2' && ch != '3' && x != 4);
+}
