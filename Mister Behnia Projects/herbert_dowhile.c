@@ -23,12 +23,16 @@
 
 void break_func(void);
 void menu(void);
+void code(void);
 int spaces(void);
 
 
 int main(int argc, char* argv[])
 {
 	// write your code here
+	printf("\n\n the CODE function is about to start \n\n");
+	code();
+	printf("\n\n done with the code function \n space function about to start \n\n");
 	spaces();
 
 	break_func();
@@ -108,7 +112,7 @@ int spaces(void)
 
 	/*
 	
-	Each character is tested to see if it is a space. If it is not, the continue statement forces the for to 
+	Each character is tested to see if it is a space. If it is not, the 'continue' statement forces the for to
 	iterate again. If the character is a space, space is incremented
 	
 	*/
@@ -130,4 +134,27 @@ int spaces(void)
 
 	return 0;
 }
+
+void code(void)
+{
+	// Another example for 'continue' statement
+
+	char done, ch;
+	done = 0;
+
+	while (!done)
+	{
+		ch = getchar();
+		if (ch == '$')
+		{
+			done = 1;
+			continue;
+		}
+
+		putchar(ch + 1);
+	}
+}
+
+
+
 
