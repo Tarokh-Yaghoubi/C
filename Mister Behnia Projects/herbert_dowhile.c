@@ -30,17 +30,22 @@ int spaces(void);
 int main(int argc, char* argv[])
 {
 	// write your code here
+	
 	printf("\n\n the CODE function is about to start \n\n");
 	code();
+	
 	printf("\n\n done with the code function \n space function about to start \n\n");
 	spaces();
 
 	break_func();
 	menu();
+	
 	int num = 0;
 
 	do {
+	
 		scanf("%d", &num);
+	
 	} while (num > 100);
 
 	printf("The end of the loop \n");
