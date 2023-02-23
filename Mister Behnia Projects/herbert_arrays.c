@@ -35,26 +35,117 @@
 		Note : ! In ' C ' arrays start at index number 0 'zero'
 */
 
+#define CLASSES 3
+#define GRADES 30
 
 #include <stdio.h>
 #include <string.h>
 
+#include <ctype.h>
+#include <stdlib.h>
+
+int grade[CLASSES][GRADES];
+
+void entergrades(void);
+int get_grade(int num);
+void display_grades(int g[][GRADES]);
+
+char justastring(char* x);
 int testfuncs(void);
 
-int main()
+
+int main(void)
+{
+	char ch, str[80];
+
+	for (; ;)
+	{
+		do
+		{
+			printf("[E] Enter Grades : \n");
+			printf("[R] Report Grades : \n");
+			printf("[Q] Quit : \n");
+			gets(str);
+			ch = toupper(*str);
+		} while (ch != 'E' && ch != 'Q' && ch != 'R');
+		
+		switch (ch) {
+		
+		case 'E':
+			entergrades();
+			break;
+		
+		case 'R':
+			display_grades(grade);
+			break;
+		
+		case 'Q':
+			exit(0);
+		}
+	}
+	return 0;
+}
+
+/* enter the students grade */
+
+void entergrades(void)
+{
+	int t, i;
+
+	for (t = 0; t < CLASSES; t++)
+	{
+		printf("Class # %d: \n", t + 1);
+		for (i = 0; i < GRADES; i++)
+			grade[t][i] = get_grade(i);
+	}
+}
+
+/* Read a grade */
+
+int get_grade(int num)
+{
+	char s[80];
+
+	printf("Enter grade for student # %d : \n", num + 1);
+	gets(s);
+	return (atoi(s));
+
+}
+
+/* Display grades */
+
+void display_grades(int g[][GRADES])
+{
+	int t, i;
+
+	for (t = 0; t < CLASSES; t++)
+	{
+		printf("CLASS # : %d \n", t + 1);
+		for (i = 0; i < GRADES; i++)
+			printf("Student # : %d has the grade : %d \n", i + 1, grade[t][i]);
+	}
+}
+
+
+int main_2()
 {
 	
 	// How Arrays Are Defined And How They Work 
 
+	int num[3][4];
 	int x[100];
 	int t;
-
+	char* ptr = "this is a simple string";
+	
 	for (t = 0; t <= 99; t++) x[t] = t;
 	for (t = 0; t <= 99; t++) printf(" %d ", x[t]);
+	
 	printf("\n\n done \n\n");
 
 	testfuncs();
+	printf("\n---------------\n");
 
+	justastring(ptr);
 	return 0;
 }
 
@@ -137,6 +228,7 @@ int main()
 */
 
 int testfuncs(void)
+
 {
 	char s1[80], s2[80];
 
@@ -165,6 +257,15 @@ int testfuncs(void)
 
 	if (strchr("tarokh is a good programmer", 't')) printf("t is in s1 \n");
 	if (strstr(s2, "programmer")) printf("found programmer in s2 \n");
+
+	return 0;
+}
+
+char justastring(char* x)
+{
+
+	// print the character array
+	printf("the string is : %s \n", x[5]);
 
 	return 0;
 }
