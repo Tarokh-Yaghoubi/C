@@ -1,52 +1,51 @@
-
 /*
 
-		A Database for Entering the grades of 30 Students in each class
-		We have 3 Classes , Each class has 30 students 
+	A Database for students grades 
+	3 Classes and 30 Grades 
 
-		Tarokh Yaghoubi
 
 */
 
 
+
 #include <stdio.h>
-#include <stdlib.h>
 #include <ctype.h>
 #include <string.h>
+#include <stdlib.h>
 
 #define CLASSES 3
-#define GRADES 30
+#define	GRADES 30
 
 int grade[CLASSES][GRADES];
 
-void enter_grades(void);
-void display_grades(int g[][GRADES]);
+void display_grades(void);
+void enter_grades(int g[][GRADES]);
 int get_grade(int num);
-
 
 int main(void)
 {
 	char ch, str[80];
 
-	for (; ;)
+	for (;;)
 	{
 		do
 		{
-			printf("[E] Enter Grades : \n");
-			printf("[R] Report Grades : \n");
+			printf("[E] Enter grades : \n");
+			printf("[R] Report grades : \n");
 			printf("[Q] Quit : \n");
+
 			gets(str);
 			ch = toupper(*str);
 
-		} while (ch != 'Q' && ch != 'R' && ch != 'E');
+		} while (ch != 'R' && ch != 'E' && ch != 'Q');
 
 		switch (ch)
 		{
-		case 'E':
-			enter_grades();
-			break;
 		case 'R':
-			display_grades(grade);
+			display_grades();
+			break;
+		case 'E':
+			enter_grades(grade);
 			break;
 		case 'Q':
 			exit(0);
@@ -55,9 +54,19 @@ int main(void)
 	return 0;
 }
 
-/* enter the grades into the database */
+int get_grade(int num)
+{
+	char s[80];
 
-void enter_grades(void)
+	printf("Enter grade for student : %d \n", num + 1);
+
+	gets(s);
+
+	return(atoi(s));
+}
+
+
+void display_grades(void)
 {
 	int t, i;
 
@@ -65,29 +74,17 @@ void enter_grades(void)
 	{
 		printf("Class # : %d \n", t + 1);
 		for (i = 0; i < GRADES; i++)
-			grade[t][i] = get_grade(i);
+			printf("Class # : %d - Student Grade # : %d \n", i + 1, grade[t][i]);
 	}
 }
 
-int get_grade(int num)
-{
-	char s[80];
-
-	printf("Enter a grade for student # : %d \n", num + 1);
-
-	gets(s);
-
-	return (atoi(s));
-}
-
-void display_grades(int g[][GRADES])
+void enter_grades(int g[][GRADES])
 {
 	int t, i;
-
-	for (t = 0; t  < CLASSES; t++)
+	for (t = 0; t < CLASSES; t++)
 	{
-		printf("Grades for Class # : %d \n", t + 1);
+		printf("Class # : %d \n", t + 1);
 		for (i = 0; i < GRADES; i++)
-			printf("Student # : %d has the grade # : %d \n", i + 1, g[t][i]);
+			grade[t][i] = get_grade(i);
 	}
 }
