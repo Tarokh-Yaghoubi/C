@@ -50,6 +50,10 @@ void entergrades(void);
 int get_grade(int num);
 void display_grades(int g[][GRADES]);
 
+// array string function : 
+void arraystring(void);
+
+
 char justastring(char* x);
 int testfuncs(void);
 
@@ -269,3 +273,29 @@ char justastring(char* x)
 
 	return 0;
 }
+
+
+/*
+
+				The size of the left dimension determines the number
+				of strings, and the size of the right dimension specifies
+			    the maximum length of each string.
+
+*/
+
+
+// An array of 30 strings with a maximum of 79 characters :
+
+// it is easy to access an individual string , you will only specify the left index (String row index) : 
+
+void arraystring(void)
+{
+	char arr_string[30][80];	// maximum 79 characters because the last one will be the null-char \0 
+
+
+	gets(arr_string[2]);
+
+	gets(&arr_string[2][0]);	// this is also possible but the first form is more general in professionally written C code .
+}
+
+
