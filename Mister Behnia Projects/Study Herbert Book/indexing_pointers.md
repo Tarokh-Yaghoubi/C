@@ -1,12 +1,12 @@
 
 # Indexing Pointers , C programming , Herbert Shieldt 
-## Tarokh Yaghoubi - Jacob , Chapter 4
+### Tarokh Yaghoubi - Jacob , Chapter 4
 
 ```	
 
-		Herbert Shieldt , C programming , Indexing Pointers (Arrays , Chapter 4)
+					Herbert Shieldt , C programming , Indexing Pointers (Arrays , Chapter 4)
 
-		Tarokh Yaghoubi , Jacob
+					Tarokh Yaghoubi , Jacob
 
 ```
 ```
@@ -57,5 +57,42 @@
 		Because strings end with a null, you must make sure that the array you declare is long enough to
 		include the null. This is why str is nine characters long even though "I like C" is only eight. When
 		you use the string constant, the compiler automatically supplies the null terminator
+
+```
+```
+
+		int sqrs[10] [2] = {
+		
+			1, 1,
+			2, 4,
+			3, 9,
+			4, 16,
+			5, 25,
+			6, 36,
+			7, 49,
+			8, 64,
+			9, 81,
+			10, 100
+		
+		}
+
+		When initializing a multidimensional array, you may add braces around the initializers for each
+		dimension. This is called subaggregate grouping. For example, here is another way to write the
+		preceding declaration :
+
+		int sqrs[10] [2] = {
+			
+			{1, 1},
+			{2, 4},
+			{3, 9},
+			{4, 16},
+			{5, 25},
+			{6, 36},
+			{7, 49},
+			{8, 64},
+			{9, 81},
+			{10, 100}
+
+		}
 
 ```
