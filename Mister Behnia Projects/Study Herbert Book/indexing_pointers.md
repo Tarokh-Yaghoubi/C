@@ -2,13 +2,13 @@
 # Indexing Pointers , C programming , Herbert Shieldt 
 ### Tarokh Yaghoubi - Jacob , Chapter 4
 
-```	
+	
 
-					Herbert Shieldt , C programming , Indexing Pointers (Arrays , Chapter 4)
+				 Herbert Shieldt , C programming , Indexing Pointers (Arrays , Chapter 4)
 
-					Tarokh Yaghoubi , Jacob
+				 Tarokh Yaghoubi , Jacob
 
-```
+
 ```
 
 
