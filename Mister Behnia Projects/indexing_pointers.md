@@ -2,13 +2,12 @@
 # Indexing Pointers , C programming , Herbert Shieldt 
 ## Tarokh Yaghoubi - Jacob , Chapter 4
 
-*
+
 		
 		Herbert Shieldt , C programming , Indexing Pointers (Arrays , Chapter 4)
 
 		Tarokh Yaghoubi , Jacob
 
-*
 
 
 
@@ -29,6 +28,8 @@
 		*(p + 5) = 12;	// asign using pointer arithmetic 
 
 
+
+
 		This same concept also applies to arrays of two or more dimensions. For example, assuming that a is
 		a 10-by-10 integer array, these two statements are equivalent:
 
@@ -47,6 +48,8 @@
 
 		
 		{ char str[9] = "I like C"; } is the same as { char str[9] = {'I', ' ', 'l', 'i', 'k', 'e',' ', 'C', '\0'};	}
+
+
 
 		Because strings end with a null, you must make sure that the array you declare is long enough to
 		include the null. This is why str is nine characters long even though "I like C" is only eight. When
