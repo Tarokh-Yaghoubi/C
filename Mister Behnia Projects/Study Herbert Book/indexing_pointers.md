@@ -4,9 +4,9 @@
 
 	
 
-## 							Herbert Shieldt , C programming , Indexing Pointers (Arrays , Chapter 4)
+### 						<center>	Herbert Shieldt , C programming , Indexing Pointers (Arrays , Chapter 4) <center/>
 
-## 							Tarokh Yaghoubi , Jacob
+### 						<center>	Tarokh Yaghoubi , Jacob <center/>
 
 
 ```
