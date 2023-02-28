@@ -39,3 +39,27 @@
 ```
 
 <h2>The Pointer Operators</h2>
+
+```
+
+	There are two pointer operators : * and & . The & is a unary operator that returns the memory address of its operand.
+	m = &count; -> keeps the internal address of variable count (it has nothing to do with its value) in pointer variable 'm';
+	you can think of & as return 'the address of' . therefor , we can say m = &count; as " m recieves the address of count "
+	
+	To understand the above assignment better, assume that the variable count uses memory location 
+	2000 to store its value. Also assume that count has a value of 100. Then, after the preceding 
+	assignment, m will have the value 2000 .
+	
+	The second pointer operator, *, is the complement of &. It is a unary operator that returns the value 
+	located at the address that follows. For example, if m contains the memory address of the variable 
+	count ->	q = *m;	-> this will place the value of count in 'q' . q will have the value 100 . because 100
+	is stores in value 2000 which the memory address that was stored in 'm' . 
+
+	You can think of * as "at address" , so you can read q = *m; as "q recieves the value at address m ";
+
+```
+
+- **Pointer Expressions** : ***In general, expressions involving pointers conform to the same rules as other expressions. This section examines a few special aspects of pointer expressions, such as assignments, conversions, and arithmetic***
+
+<h2>Pointer Assignments</h2>
+<p>You can use a pointer on the right-hand side of an assignment statement to assign its value to another pointer. When both pointers are the same type, the situation is straightforward.</p>
