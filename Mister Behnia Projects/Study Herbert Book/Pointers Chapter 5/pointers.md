@@ -38,4 +38,4 @@
 
 ```
 
-<h2 style="text-align: center;">H3 that is center aligned</h2>
+<h2>The Pointer Operators</h2>
