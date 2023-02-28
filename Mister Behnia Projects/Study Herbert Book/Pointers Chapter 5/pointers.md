@@ -10,4 +10,4 @@
 	efficiency of certain routines.
 
 ```
-** pointers provide support for dynamic data structures, such as binary trees and linked lists **
+- **pointers provide support for dynamic data structures, such as binary trees and linked lists**
