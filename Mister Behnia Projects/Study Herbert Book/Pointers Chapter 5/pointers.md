@@ -64,3 +64,29 @@
 <h2>Pointer Assignments</h2>
 <p>You can use a pointer on the right-hand side of an assignment statement to assign its value to another pointer. When both pointers are the same type, the situation is straightforward.</p>
 
+## Pointer Conversion
+
+```
+
+	In C, it is permissible to assign a void * pointer to any other type of pointer. It is also permissible to 
+	assign any other type of pointer to a void * pointer. A void * pointer is called a generic pointer. The 
+	void * pointer is used to specify a pointer whose base type is unknown. The void * type allows a 
+	function to specify a parameter that is capable of receiving any type of pointer argument without 
+	reporting a type mismatch.
+
+```
+```
+
+	The preceding example reinforces the rule stated earlier: Pointer operations are performed relative to 
+	the base type of the pointer. While it is technically permissible for a pointer to point to some other 
+	type of object, the pointer will still ''think" that it is pointing to an object of its base type. Thus, 
+	pointer operations are governed by the type of the pointer, not the type of the object being pointed 
+	to.
+
+	One other pointer conversion is allowed: You can convert an integer into a pointer or a pointer into 
+	an integer. However, you must use an explicit cast, and the result of such a conversion is 
+	implementation defined and may result in undefined behavior. (A cast is not needed when 
+	converting zero, which is the null pointer.)
+
+
+```
