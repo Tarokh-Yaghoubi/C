@@ -11,3 +11,6 @@
 
 ```
 - **pointers provide support for dynamic data structures, such as binary trees and linked lists**
+- **Pointers are one of the strongest but also one of the most dangerous features in C.**
+- **A pointer containing an invalid value can cause your program to crash.**
+- **It is easy to use pointers incorrectly, causing bugs that are very difficult to find.**
