@@ -108,7 +108,7 @@
 
 ## Arrays of Pointers , in C programming 
 
-<p>$\color[RGB]{155,127,0} Pointers can be arrayed like any other data type $</p> 
+<p>Pointers can be arrayed like any other data type </p> 
 <br />
 
 ```
