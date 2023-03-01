@@ -10,11 +10,12 @@
 	efficiency of certain routines.
 
 ```
+<span color="green">
 - **pointers provide support for dynamic data structures, such as binary trees and linked lists**
 - **Pointers are one of the strongest but also one of the most dangerous features in C.**
 - **A pointer containing an invalid value can cause your program to crash.**
 - **It is easy to use pointers incorrectly, causing bugs that are very difficult to find.**
-
+</span>
 ```
 
 	A pointer is a variable that holds a memory address . This address is the location of another object (typically another variable) 
@@ -38,7 +39,7 @@
 
 ```
 
-<h2>The Pointer Operators</h2>
+<h2><span color="blue">The Pointer Operators</span></h2>
 
 ```
 
@@ -61,7 +62,7 @@
 
 - **Pointer Expressions** : ***In general, expressions involving pointers conform to the same rules as other expressions. This section examines a few special aspects of pointer expressions, such as assignments, conversions, and arithmetic***
 
-<h2>Pointer Assignments</h2>
+<h2><span color="blue">Pointer Assignments</span></h2>
 <p>You can use a pointer on the right-hand side of an assignment statement to assign its value to another pointer. When both pointers are the same type, the situation is straightforward.</p>
 
 ## Pointer Conversion
@@ -92,7 +93,7 @@
 
 ## Pointers and Arrays in C programming
 
-<p>There is a close relationship between pointers and arrays</p>
+<span color="red">There is a close relationship between pointers and arrays</span>
 <br />
 
 ```
@@ -112,12 +113,12 @@
 <br />
 
 ```
-<span color="green"> The decleration for an int pointer array of size 10 would be like : int *x[10];
+	The decleration for an int pointer array of size 10 would be like : int *x[10];
 	
 	to assign the address of an integer called 'myvar' to the third element of the array
 
 	write -> x[2] = &myvar; and to file the value of myvar , write printf("myvar value : [%d] \n", *x[2]);
-</span>
+
 ```
 <br />
 <hr>
