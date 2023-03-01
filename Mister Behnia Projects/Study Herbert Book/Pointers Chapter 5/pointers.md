@@ -112,12 +112,12 @@
 <br />
 
 ```
-	The decleration for an int pointer array of size 10 would be like : int *x[10];
+<span color="green">The decleration for an int pointer array of size 10 would be like : int *x[10];
 	
 	to assign the address of an integer called 'myvar' to the third element of the array
 
 	write -> x[2] = &myvar; and to file the value of myvar , write printf("myvar value : [%d] \n", *x[2]);
-
+</span>
 ```
 <br />
 <hr>
