@@ -11,7 +11,7 @@
 
 ```
 
-- **pointers provide support for dynamic data structures, such as binary trees and linked lists**
+- **Pointers provide support for dynamic data structures, such as binary trees and linked lists**
 - **Pointers are one of the strongest but also one of the most dangerous features in C.**
 - **A pointer containing an invalid value can cause your program to crash.**
 - **It is easy to use pointers incorrectly, causing bugs that are very difficult to find.**
@@ -106,6 +106,41 @@
 	4 steps and now p1 is pointing at fifth index of the array (we say fifth because array indexes start from 0)
 
 ```
+<span color="red">note : You can use pointers in arrays instead of array indexes , Although the standard array-indexing notation is 
+sometimes easier to understand, pointer arithmetic can be faster. Since speed is often a consideration 
+in programming, C programmers often use pointers to access array elements. </span>
+
+```
+	These two versions of putstr( )— one with array indexing and one with pointers— illustrate how you 
+	can use pointers in place of array indexing. The putstr( ) function writes a string to the standard 
+	output device one character at a time.
+
+	/* Index s as an array. */
+
+	void putstr(char *s)
+	{
+		register int t;
+		for(t=0; s[t]; ++t) putchar(s[t]);
+	}
+		
+	/* Access s as a pointer. */
+		
+	void putstr(char *s)
+	{
+		while(*s) putchar(*s++);
+	}
+
+	Most professional C programmers would find the second version easier to read and understand. 
+	Depending upon the compiler, it might also be more efficient. In fact, the pointer version is the way 
+	routines of this sort are commonly written in C
+
+```
+
+<br />
+```
+	
+
+```
 
 ## Arrays of Pointers , in C programming 
 
@@ -142,3 +177,4 @@
 
 	note : As a point of interest, note that the command line argument argv is an array of character pointers .
 ```
+
