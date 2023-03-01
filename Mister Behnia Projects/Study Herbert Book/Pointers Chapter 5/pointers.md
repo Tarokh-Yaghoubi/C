@@ -108,7 +108,7 @@
 
 ## Arrays of Pointers , in C programming 
 
-<p>Pointers can be arrayed like any other data type </p> 
+<p>$\color[RGB]{155,127,0} Pointers can be arrayed like any other data type $</p> 
 <br />
 
 ```
@@ -140,4 +140,3 @@
 
 	note : As a point of interest, note that the command line argument argv is an array of character pointers .
 ```
-$\color[RGB]{155,127,0} hello$
