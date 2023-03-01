@@ -111,8 +111,8 @@ sometimes easier to understand, pointer arithmetic can be faster. Since speed is
 in programming, C programmers often use pointers to access array elements. </span>
 
 ```
-	These two versions of putstr( )— one with array indexing and one with pointers— illustrate how you 
-	can use pointers in place of array indexing. The putstr( ) function writes a string to the standard 
+	These two versions of putstr() - one with array indexing and one with pointers— illustrate how you 
+	can use pointers in place of array indexing. The putstr() function writes a string to the standard 
 	output device one character at a time.
 
 	/* Index s as an array. */
