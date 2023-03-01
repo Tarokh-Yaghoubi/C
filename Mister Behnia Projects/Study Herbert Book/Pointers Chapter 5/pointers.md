@@ -137,10 +137,7 @@ in programming, C programmers often use pointers to access array elements. </spa
 ```
 
 <br />
-```
-	
 
-```
 
 ## Arrays of Pointers , in C programming 
 
@@ -177,4 +174,3 @@ in programming, C programmers often use pointers to access array elements. </spa
 
 	note : As a point of interest, note that the command line argument argv is an array of character pointers .
 ```
-
