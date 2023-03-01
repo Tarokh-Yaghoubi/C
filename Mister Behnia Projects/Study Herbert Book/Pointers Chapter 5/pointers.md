@@ -122,17 +122,17 @@
 <br />
 <hr>
 
-```
+```diff
 	If you want to pass an array of pointers into a function, you can use the same method that you use to 
 	pass other arrays: Simply call the function with the array name without any subscripts. For example, 
 	a function that can receive array x looks like this:
 
-	void display_array(int *q[])
-	{
-		int t;
-		for(t=0; t<10; t++)
-		printf(''%d ", *q[t]);
-	}
+	+ void display_array(int *q[])
+	+ {
+	+ 	int t;
+	+	for(t=0; t<10; t++)
+	+	printf(''%d ", *q[t]);
+	+ }
 
 	Remember, q is not a pointer to integers, but rather a pointer to an array of pointers to integers. 
 	Therefore you need to declare the parameter q as an array of integer pointers, as just shown. You 
