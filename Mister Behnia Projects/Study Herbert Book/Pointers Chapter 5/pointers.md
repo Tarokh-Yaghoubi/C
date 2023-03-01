@@ -87,12 +87,56 @@
 	an integer. However, you must use an explicit cast, and the result of such a conversion is 
 	implementation defined and may result in undefined behavior. (A cast is not needed when 
 	converting zero, which is the null pointer.)
+```
 
+
+## Pointers and Arrays in C programming
+
+<p>There is a close relationship between pointers and arrays</p>
+<br />
 
 ```
 
+	char str[80], *p1;
+	p1 = str;
+
+	here p1 has been set to the address of the first array element in str .	To access the fifth element in str , you could write :
+	str[4] ;	or	   *(p1 + 4) , you add 4 to p1 because p1 points to the first element of the array by default . so +4 means go
+	4 steps and now p1 is pointing at fifth index of the array (we say fifth because array indexes start from 0)
+
 ```
 
+## Arrays of Pointers , in C programming 
+
+<p>Pointers can be arrayed like any other data type </p> 
+<br />
+
+```
+	The decleration for an int pointer array of size 10 would be like : int *x[10];
 	
+	to assign the address of an integer called 'myvar' to the third element of the array
 
+	write -> x[2] = &myvar; and to file the value of myvar , write printf("myvar value : [%d] \n", *x[2]);
+
+```
+<br />
+<hr>
+
+```
+	If you want to pass an array of pointers into a function, you can use the same method that you use to 
+	pass other arrays: Simply call the function with the array name without any subscripts. For example, 
+	a function that can receive array x looks like this:
+
+	void display_array(int *q[])
+	{
+		int t;
+		for(t=0; t<10; t++)
+		printf(''%d ", *q[t]);
+	}
+
+	Remember, q is not a pointer to integers, but rather a pointer to an array of pointers to integers. 
+	Therefore you need to declare the parameter q as an array of integer pointers, as just shown. You 
+	cannot declare q simply as an integer pointer because that is not what it is.
+
+	note : As a point of interest, note that the command line argument argv is an array of character pointers .
 ```
