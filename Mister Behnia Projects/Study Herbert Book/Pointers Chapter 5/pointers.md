@@ -1,5 +1,5 @@
-<h1 color="darkblue"> Pointers in C programming , Herbert Shieldt Book </h1>
-## Tarokh Yaghoubi , Jacob
+<h1 color="blue"> Pointers in C programming , Herbert Shieldt Book </h1>
+<h3> Tarokh Yaghoubi , Jacob </h3>
 
 
 ```
