@@ -2,33 +2,90 @@
 #include <string.h>
 #include <stdlib.h>
 
-void wrong_assignment(void);
+// void wrong_assignment(void);
 
 int main(void)
 {
-	wrong_assignment();
+	// wrong_assignment();
 
-	int x = 99;
-	int* p1, * p2;
+	char db[5] = { 'h', 'w', 'c', 'a'  };
 
-	p1 = &x;
-	p2 = p1;
+	char *p;
+	char nm = 't';
+	char* ptr;
+	char* specific;
+	
+	ptr = &nm;	
+	specific = &db[2];
 
-	printf("The value of x is : %d , the value of p1 is : %d , the value of p2 is : %d \n", x, *p1, *p2);
-	printf("the address of p1 is : %p , the address of p2 is : %p \n", p1, p2);
+	p = db;
+	printf("The address of db embedded in p : %p \n", p);
+	
+	p++;
+
+	if (specific > p) printf("specific points to higher mem than p | { specific : [%p] - p : [%p] } \n", specific, p);
+	else printf("p points to higher mem than specific | { specific : [%p] - p : [%p] }  \n", specific, p);
+	printf("The address of db embedded in p after incrementing : %p \n", p);
+	// p++;
+	
+	printf("The address of db embedded in p after incrementing again : %p \n", p);
+	printf("first %c \n", p[0]);
+	printf("second %c \n", *(p+1));
+	printf("third %c \n", p[2]);
+	printf("forth %c \n", p[3]);
+
+	//float* floatPtr;
+	//void* voidPtr;
+	//int* intPtr;
+	//int ans;
+
+	//float trash;
+	//trash = 568.36F;
+
+
+	//
+	//floatPtr = &trash;
+	//voidPtr = floatPtr;
+	//intPtr = (int*)&voidPtr;
+	//ans = *intPtr;
+	//printf("The voidPtr p is %p \n", voidPtr);
+	//printf("The voidPtr p is %p \n", &voidPtr);
+	//printf("The voidPtr p is %p \n", intPtr);
+	//printf("The float ptr value is : %p \n", ans);
+
+
+	//int var = 54, *ptr, *ptr1;		// type of object to which the pointer will point 
+
+	//ptr1 = &trash;
+	//ptr = &var;
+	//ptr++;
+	//printf("the ptr address is : %p \n", ptr);
+	//printf("the ptr value is : %d \n", *ptr);
+	//ptr = ++ptr;
+	//ptr++;
+	//printf("the ptr value is : %d \n", ++*ptr);
+	//
+
+	//int x = 200;
+	//int* p1, * p2;
+	//p1 = &x;
+	//p2 = p1;
+
+	//printf("The value of x is : %d , the value of p1 is : %d , the value of p2 is : %d \n", x, *p1, *p2);
+	//printf("the address of p1 is : %p , the address of p2 is : %p \n", p1, p2);
 
 	return 0;
 }
 
-void wrong_assignment(void)
-{
-	double x = 100.1, y;
-	int* p;
-
-	p = (int*)&x;
-
-	y = *p;
-
-	printf("the (incorrect) value of x is : %f", y);
-
-}
+//void wrong_assignment(void)
+//{
+//	double x = 100.1, y;
+//	int* p;
+//
+//	p = (int*)&x;
+//
+//	y = *p;
+//
+//	printf("the (incorrect) value of x is : %f", y);
+//
+//}
