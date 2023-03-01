@@ -112,7 +112,7 @@
 <br />
 
 ```
-<span color="green">The decleration for an int pointer array of size 10 would be like : int *x[10];
+<span color="green"> The decleration for an int pointer array of size 10 would be like : int *x[10];
 	
 	to assign the address of an integer called 'myvar' to the third element of the array
 
