@@ -108,7 +108,7 @@
 
 ## Arrays of Pointers , in C programming 
 
-<p>Pointers can be arrayed like any other data type </p> 
+<span color="red">Pointers can be arrayed like any other data type </span> 
 <br />
 
 ```
