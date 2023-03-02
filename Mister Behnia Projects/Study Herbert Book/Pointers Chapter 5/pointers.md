@@ -174,3 +174,24 @@ in programming, C programmers often use pointers to access array elements. </spa
 
 	note : As a point of interest, note that the command line argument argv is an array of character pointers .
 ```
+<br />
+<br />
+
+<h1 color="blue">Multiple Indirection - Pointer to Pointer </h1>
+
+```
+	You can have a pointer to point to another pointer that points to the target value 
+	this situation is called multiple indirection or pointers to pointers . Pointers to Pointers 
+	can be confusing . As you can see, the value of a normal pointer is the
+	address of the object that contains the desired value. In the case of a pointer to a pointer, the first
+	pointer contains the address of the second pointer, which points to the object that contains the
+	desired value.
+```
+```
+	A variable that is a pointer to a pointer must be declared as such. You do this by placing an
+	additional asterisk in front of the variable name. For example, the following declaration tells the
+	compiler that newbalance is a pointer to a pointer of type float:
+	
+	float **newbalance;		
+```
+<h3 color="red"><b> You should understand that newbalance is not a pointer to a floating-point number but rather a pointer to a float pointer. </b></h3>
