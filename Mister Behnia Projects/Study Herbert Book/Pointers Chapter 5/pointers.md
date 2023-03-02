@@ -195,3 +195,21 @@ in programming, C programmers often use pointers to access array elements. </spa
 	float **newbalance;		
 ```
 <h3 color="red"><b> You should understand that newbalance is not a pointer to a floating-point number but rather a pointer to a float pointer. </b></h3>
+
+<h3 color="blue"> Single indirection (Pointer) : address -> value | Multiple Indirection (Pointer to pointer) : address -> address -> value </h3>
+<hr />
+<h3 color="red">Note : To access the target value indirectly pointed to by a pointer to a pointer, you must apply the asterisk operator twice, as in this example : </h3>
+<br />
+```
+	#include <stdio.h>
+
+	int main(void)
+	{
+		int x, *p, **q;
+		x = 10;
+		p = &x;
+		q = &p;
+		printf("%d", **q); /* print the value of x */
+		return 0;
+	}
+```
