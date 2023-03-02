@@ -200,7 +200,7 @@ in programming, C programmers often use pointers to access array elements. </spa
 <hr />
 <h3 color="red">Note : To access the target value indirectly pointed to by a pointer to a pointer, you must apply the asterisk operator twice, as in this example : </h3>
 ```
-	#include < stdio.h >
+	include < stdio.h >
 
 	int main(void)
 	{
