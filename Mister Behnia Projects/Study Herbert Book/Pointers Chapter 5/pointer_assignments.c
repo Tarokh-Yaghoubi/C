@@ -11,6 +11,14 @@ int main(void)
 	char db[5] = { 'h', 'w', 'c', 'a'  };
 	char* ptrarray[10];
 
+	int number;
+	number = 586;
+
+	int* ptrtoNum, ** ptr2Ptr;
+	ptrtoNum = &number;
+	ptr2Ptr = &ptrtoNum;
+
+
 	ptrarray[1] = db;
 
 	char *p;
@@ -40,7 +48,14 @@ int main(void)
 	printf("The pointer ptrarray has the address of : %p \n", ptrarray[1]);
 	printf("The pointer ptrarray has the address of : %p \n", &db[0]);
 	printf("The pointer ptrarray[1] has the value of : %c \n", *ptrarray[1]);
-	//float* floatPtr;
+	
+	printf("\n +-------------------+ \n");
+	printf("the address of the number variable is : %p and the value is equal to : %d \n", &number, number);
+	printf("the address of inside the pointer holding the address of number is : %p with the value of : %d \n", ptrtoNum, *ptrtoNum);
+	printf("the address of the pointer holding the address of number is : %p with the value of : %d \n", &ptrtoNum, *ptrtoNum);
+	printf("the address of the pointer which is pointing to the pointer holding the address of number is : %p , with the value of : %d \n ", ptr2Ptr, **ptr2Ptr);
+
+	//float* floatPtr;	
 	//void* voidPtr;
 	//int* intPtr;
 	//int ans;
