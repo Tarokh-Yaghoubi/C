@@ -9,6 +9,9 @@ int main(void)
 	// wrong_assignment();
 
 	char db[5] = { 'h', 'w', 'c', 'a'  };
+	char* ptrarray[10];
+
+	ptrarray[1] = db;
 
 	char *p;
 	char nm = 't';
@@ -33,7 +36,10 @@ int main(void)
 	printf("second %c \n", *(p+1));
 	printf("third %c \n", p[2]);
 	printf("forth %c \n", p[3]);
-
+	printf("The pointer ptrarray has the address of : %p \n", &ptrarray);
+	printf("The pointer ptrarray has the address of : %p \n", ptrarray[1]);
+	printf("The pointer ptrarray has the address of : %p \n", &db[0]);
+	printf("The pointer ptrarray[1] has the value of : %c \n", *ptrarray[1]);
 	//float* floatPtr;
 	//void* voidPtr;
 	//int* intPtr;
