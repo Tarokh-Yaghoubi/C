@@ -249,7 +249,8 @@ in programming, C programmers often use pointers to access array elements. </spa
 	it encounters the null value. The search( ) function shown in the following program illustrates this
 	type of approach. Given a list of names, search( ) determines whether a specified name is in that
 	list .
-
+```
+```
 
 	#include <stdio.h>
 	#include <string.h>
