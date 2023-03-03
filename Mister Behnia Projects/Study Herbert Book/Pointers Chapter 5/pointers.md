@@ -212,3 +212,84 @@ in programming, C programmers often use pointers to access array elements. </spa
 		return 0;
 	}
 ```
+
+<h2>Initializing Pointers</h2>
+
+```
+	After a nonstatic, local pointer is declared but before it has been assigned a value, it contains an
+	unknown value. (Global and static local pointers are automatically initialized to null.) Should you
+	try to use the pointer before giving it a valid value, you will probably crash your program— and
+	possibly your computer's operating system as well— a very nasty type of error!
+
+
+	There is an important convention that most C programmers follow when working with pointers: A
+	pointer that does not currently point to a valid memory location is given the value null (which is
+	zero). Null is used because C guarantees that no object will exist at the null address. Thus, any
+	pointer that is null implies that it points to nothing and should not be used.
+
+	One way to give pointer a null value is to assign zero to it , for example the following initializes p to null : 
+
+	char *p = 0;
+
+	also some headers like <stdio.h> provide statements such as NULL , which is a null pointer constant  , therefor you often
+	see	a pointer assigned null using a statement such as this :	char *p = NULL;
+
+```
+
+```
+	Because a null pointer is assumed to be unused, you can use the null pointer to make many of your
+	pointer routines easier to code and more efficient. For example, you can use a null pointer to mark
+	the end of a pointer array.
+
+```
+
+```
+	
+	A routine that accesses that array knows that it has reached the end when
+	it encounters the null value. The search( ) function shown in the following program illustrates this
+	type of approach. Given a list of names, search( ) determines whether a specified name is in that
+	list .
+
+
+	#include <stdio.h>
+	#include <string.h>
+
+	int search(char *p[], char *name);
+
+	char *names[] = {
+	
+		"Herb",
+		"Rex",
+		"Dennis",
+		"John ",
+		NULL};		/* null pointer constant ends the list */
+
+	int main(void)
+	{
+
+		if(search(names, "Dennis") != -1)
+			printf("Dennis is in list.\n");
+
+		if(search(names, "Bill") == -1)
+			printf("Bill not found.\n");
+
+	return 0;
+
+	}
+
+	/* Look up a name. */
+
+	int search(char *p[], char *name)
+	{
+
+		register int t;
+
+		for(t=0; p[t]; ++t)
+
+		if(!strcmp(p[t], name)) return t;
+
+		return -1;		/* not found */
+
+	}
+
+```
