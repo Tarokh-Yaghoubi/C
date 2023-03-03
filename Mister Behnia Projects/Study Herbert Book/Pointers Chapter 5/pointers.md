@@ -213,7 +213,7 @@ in programming, C programmers often use pointers to access array elements. </spa
 	}
 ```
 
-<h2>Initializing Pointers</h2>
+<h2 color="gray">Initializing Pointers</h2>
 
 ```
 	After a nonstatic, local pointer is declared but before it has been assigned a value, it contains an
@@ -233,21 +233,19 @@ in programming, C programmers often use pointers to access array elements. </spa
 
 	also some headers like <stdio.h> provide statements such as NULL , which is a null pointer constant  , therefor you often
 	see	a pointer assigned null using a statement such as this :	char *p = NULL;
-
 ```
 
 ```
 	Because a null pointer is assumed to be unused, you can use the null pointer to make many of your
 	pointer routines easier to code and more efficient. For example, you can use a null pointer to mark
 	the end of a pointer array.
-
 ```
 
 ```
 	
 	A routine that accesses that array knows that it has reached the end when
-	it encounters the null value. The search( ) function shown in the following program illustrates this
-	type of approach. Given a list of names, search( ) determines whether a specified name is in that
+	it encounters the null value. The search() function shown in the following program illustrates this
+	type of approach. Given a list of names, search() determines whether a specified name is in that
 	list .
 ```
 ```
