@@ -298,3 +298,19 @@ in programming, C programmers often use pointers to access array elements. </spa
 	}
 
 ```
+<h2 color="blue">What does (PC) Program Counter mean ? </h2>
+
+```
+	A program counter (PC) is a CPU register in the computer processor which has the address of the next instruction to be executed from memory.
+	It is a digital counter needed for faster execution of tasks as well as for tracking the current execution poin
+
+	All instructions as well as data in memory have a specific address. As each instruction is processed, the software application responsible 
+	updates the program counter with the upcoming instructions' address which needs to be fetched. 
+	The program counter in turn passes this information to the memory address register as part of the execution cycle/standard fetch.
+	The program counter increases the stored value by one as the next instruction is fetched. If the computer is reset or restarts, 
+	the program counter usually reverts to the value of zero.
+
+```
+
+<p color="red"><b> What's Heap Memory ?  In certain programming languages including C and Pascal , a heap is an area of pre-reserved computer main storage ( memory ) that a program process can use to store data in some variable amount that won't be known until the program is running </b></p>
+
