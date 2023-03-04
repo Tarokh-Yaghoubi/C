@@ -96,7 +96,7 @@
 <span color="red">There is a close relationship between pointers and arrays</span>
 <br />
 
-```
+<h3 color="gray">
 
 	char str[80], *p1;
 	p1 = str;
@@ -105,7 +105,8 @@
 	str[4] ;	or	   *(p1 + 4) , you add 4 to p1 because p1 points to the first element of the array by default . so +4 means go
 	4 steps and now p1 is pointing at fifth index of the array (we say fifth because array indexes start from 0)
 
-```
+</h3>
+
 <span color="red">note : You can use pointers in arrays instead of array indexes , Although the standard array-indexing notation is 
 sometimes easier to understand, pointer arithmetic can be faster. Since speed is often a consideration 
 in programming, C programmers often use pointers to access array elements. </span>
@@ -134,6 +135,7 @@ in programming, C programmers often use pointers to access array elements. </spa
 	Most professional C programmers would find the second version easier to read and understand. 
 	Depending upon the compiler, it might also be more efficient. In fact, the pointer version is the way 
 	routines of this sort are commonly written in C
+
 
 </b></h3>
 <hr>
