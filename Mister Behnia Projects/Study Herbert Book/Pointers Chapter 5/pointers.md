@@ -32,7 +32,7 @@
 	The base type of the pointer defines the type of object to which the pointer will point. Technically, 
 	any type of pointer can point anywhere in memory. However, all pointer operations are done relative 
 	to the pointer's base type. For example, when you declare a pointer to be of type int *, the compiler 
-	assumes that any address that it holds points to an integer— whether it actually does or not. (That is, 
+	assumes that any address that it holds points to an integerï¿½ whether it actually does or not. (That is, 
 	an int * pointer always ''thinks" that it points to an int object, no matter what that piece of memory 
 	actually contains.) Therefore, when you declare a pointer, you must make sure that its type is 
 	compatible with the type of object to which you want to point .
@@ -109,9 +109,9 @@
 <span color="red">note : You can use pointers in arrays instead of array indexes , Although the standard array-indexing notation is 
 sometimes easier to understand, pointer arithmetic can be faster. Since speed is often a consideration 
 in programming, C programmers often use pointers to access array elements. </span>
-
-```
-	These two versions of putstr() - one with array indexing and one with pointers— illustrate how you 
+<hr>
+<h3 color="gray"><b>
+	These two versions of putstr() - one with array indexing and one with pointersï¿½ illustrate how you 
 	can use pointers in place of array indexing. The putstr() function writes a string to the standard 
 	output device one character at a time.
 
@@ -134,8 +134,8 @@ in programming, C programmers often use pointers to access array elements. </spa
 	Depending upon the compiler, it might also be more efficient. In fact, the pointer version is the way 
 	routines of this sort are commonly written in C
 
-```
-
+</b></h3>
+<hr>
 <br />
 
 
@@ -218,8 +218,8 @@ in programming, C programmers often use pointers to access array elements. </spa
 ```
 	After a nonstatic, local pointer is declared but before it has been assigned a value, it contains an
 	unknown value. (Global and static local pointers are automatically initialized to null.) Should you
-	try to use the pointer before giving it a valid value, you will probably crash your program— and
-	possibly your computer's operating system as well— a very nasty type of error!
+	try to use the pointer before giving it a valid value, you will probably crash your programï¿½ and
+	possibly your computer's operating system as wellï¿½ a very nasty type of error!
 
 
 	There is an important convention that most C programmers follow when working with pointers: A
