@@ -2,21 +2,21 @@
 <h3> Tarokh Yaghoubi , Jacob </h3>
 
 
-<h4>
+```
 
 	The correct understanding and use of pointers is crucial to successful C programming. There are 
 	several reasons for this: First, pointers provide the means by which functions can modify their 
 	calling arguments. Second, pointers support dynamic allocation. Third, pointers can improve the 
 	efficiency of certain routines.
 
-</h4>
+```
 
 - **Pointers provide support for dynamic data structures, such as binary trees and linked lists**
 - **Pointers are one of the strongest but also one of the most dangerous features in C.**
 - **A pointer containing an invalid value can cause your program to crash.**
 - **It is easy to use pointers incorrectly, causing bugs that are very difficult to find.**
 
-<h4 color="blue">
+```
 
 	A pointer is a variable that holds a memory address . This address is the location of another object (typically another variable) 
 	in memory . if one variable is meant to keep the address of another variable , the first variable is said to point to the second 
@@ -25,9 +25,9 @@
 	A pointer variable is defined like : { data_type *name } - the type can be any data type ( int , float , char , double ..... )
 	The name of the pointer variable is specified by name .
 
-</h4>
+```
 
-<h4>
+```
 
 	The base type of the pointer defines the type of object to which the pointer will point. Technically, 
 	any type of pointer can point anywhere in memory. However, all pointer operations are done relative 
@@ -37,11 +37,11 @@
 	actually contains.) Therefore, when you declare a pointer, you must make sure that its type is 
 	compatible with the type of object to which you want to point .
 
-</h4>
+```
 
 <h2 color="blue">The Pointer Operators</h2>
 
-<h4>
+```
 
 	There are two pointer operators : * and & . The & is a unary operator that returns the memory address of its operand.
 	m = &count; -> keeps the internal address of variable count (it has nothing to do with its value) in pointer variable 'm';
@@ -58,7 +58,7 @@
 
 	You can think of * as "at address" , so you can read q = *m; as "q recieves the value at address m ";
 
-</h4>
+```
 
 - **Pointer Expressions** : ***In general, expressions involving pointers conform to the same rules as other expressions. This section examines a few special aspects of pointer expressions, such as assignments, conversions, and arithmetic***
 
@@ -67,7 +67,7 @@
 
 <h2 color="blue"> Pointer Conversion </h2>
 
-<h4>
+```
 
 	In C, it is permissible to assign a void * pointer to any other type of pointer. It is also permissible to 
 	assign any other type of pointer to a void * pointer. A void * pointer is called a generic pointer. The 
@@ -75,8 +75,8 @@
 	function to specify a parameter that is capable of receiving any type of pointer argument without 
 	reporting a type mismatch.
 
-</h4>
-<h4>
+```
+```
 
 	The preceding example reinforces the rule stated earlier: Pointer operations are performed relative to 
 	the base type of the pointer. While it is technically permissible for a pointer to point to some other 
@@ -88,8 +88,7 @@
 	an integer. However, you must use an explicit cast, and the result of such a conversion is 
 	implementation defined and may result in undefined behavior. (A cast is not needed when 
 	converting zero, which is the null pointer.)
-
-</h4>
+```
 
 
 <h2 color="blue">Pointers and Arrays in C programming</h2>
@@ -97,7 +96,7 @@
 <span color="red">There is a close relationship between pointers and arrays</span>
 <br />
 
-<h4 color="gray">
+```
 
 	char str[80], *p1;
 	p1 = str;
@@ -106,14 +105,12 @@
 	str[4] ;	or	   *(p1 + 4) , you add 4 to p1 because p1 points to the first element of the array by default . so +4 means go
 	4 steps and now p1 is pointing at fifth index of the array (we say fifth because array indexes start from 0)
 
-</h4>
-
+```
 <span color="red">note : You can use pointers in arrays instead of array indexes , Although the standard array-indexing notation is 
 sometimes easier to understand, pointer arithmetic can be faster. Since speed is often a consideration 
 in programming, C programmers often use pointers to access array elements. </span>
-<hr>
-<h3 color="gray"><b>
 
+```
 	These two versions of putstr() - one with array indexing and one with pointers� illustrate how you 
 	can use pointers in place of array indexing. The putstr() function writes a string to the standard 
 	output device one character at a time.
@@ -137,9 +134,8 @@ in programming, C programmers often use pointers to access array elements. </spa
 	Depending upon the compiler, it might also be more efficient. In fact, the pointer version is the way 
 	routines of this sort are commonly written in C
 
+```
 
-</b></h3>
-<hr>
 <br />
 
 
