@@ -18,11 +18,14 @@
 
 ```
 
-	A pointer is a variable that holds a memory address . This address is the location of another object (typically another variable) 
-	in memory . if one variable is meant to keep the address of another variable , the first variable is said to point to the second 
+	A pointer is a variable that holds a memory address . This address is the location of another object 
+	(typically another variable) 
+	in memory . if one variable is meant to keep the address of another variable , the first variable is 
+	said to point to the second 
 
 
-	A pointer variable is defined like : { data_type *name } - the type can be any data type ( int , float , char , double ..... )
+	A pointer variable is defined like : { data_type *name } - the type can be any data type 
+	( int , float , char , double ..... )
 	The name of the pointer variable is specified by name .
 
 ```
@@ -32,7 +35,7 @@
 	The base type of the pointer defines the type of object to which the pointer will point. Technically, 
 	any type of pointer can point anywhere in memory. However, all pointer operations are done relative 
 	to the pointer's base type. For example, when you declare a pointer to be of type int *, the compiler 
-	assumes that any address that it holds points to an integer� whether it actually does or not. (That is, 
+	assumes that any address that it holds points to an integer whether it actually does or not. (That is, 
 	an int * pointer always ''thinks" that it points to an int object, no matter what that piece of memory 
 	actually contains.) Therefore, when you declare a pointer, you must make sure that its type is 
 	compatible with the type of object to which you want to point .
@@ -43,10 +46,11 @@
 
 ```
 
-	There are two pointer operators : * and & . The & is a unary operator that returns the memory address of its operand.
-	m = &count; -> keeps the internal address of variable count (it has nothing to do with its value) in pointer variable 'm';
-	you can think of & as return 'the address of' . therefor , we can say m = &count; as " m recieves the address of count "
-	
+	There are two pointer operators : * and & . The & is a unary operator that returns the memory address of 
+	its operand. m = &count; -> keeps the internal address of variable count (it has nothing to do with its value)
+	in pointer variable 'm'; you can think of & as return 'the address of' . therefor , we can say m = &count; as 
+	" m recieves the address of count "
+
 	To understand the above assignment better, assume that the variable count uses memory location 
 	2000 to store its value. Also assume that count has a value of 100. Then, after the preceding 
 	assignment, m will have the value 2000 .
@@ -101,9 +105,11 @@
 	char str[80], *p1;
 	p1 = str;
 
-	here p1 has been set to the address of the first array element in str .	To access the fifth element in str , you could write :
-	str[4] ;	or	   *(p1 + 4) , you add 4 to p1 because p1 points to the first element of the array by default . so +4 means go
-	4 steps and now p1 is pointing at fifth index of the array (we say fifth because array indexes start from 0)
+	here p1 has been set to the address of the first array element in str .	To access the fifth element in str , 
+	you could write :
+	str[4] ;	or	   *(p1 + 4) , you add 4 to p1 because p1 points to the first element of the array by default .
+	so +4 means go 4 steps and now p1 is pointing at fifth index of the array 
+	(we say fifth because array indexes start from 0)
 
 ```
 <span color="red">note : You can use pointers in arrays instead of array indexes , Although the standard array-indexing notation is 
@@ -111,7 +117,7 @@ sometimes easier to understand, pointer arithmetic can be faster. Since speed is
 in programming, C programmers often use pointers to access array elements. </span>
 
 ```
-	These two versions of putstr() - one with array indexing and one with pointers� illustrate how you 
+	These two versions of putstr() - one with array indexing and one with pointers illustrate how you 
 	can use pointers in place of array indexing. The putstr() function writes a string to the standard 
 	output device one character at a time.
 
@@ -218,8 +224,8 @@ in programming, C programmers often use pointers to access array elements. </spa
 ```
 	After a nonstatic, local pointer is declared but before it has been assigned a value, it contains an
 	unknown value. (Global and static local pointers are automatically initialized to null.) Should you
-	try to use the pointer before giving it a valid value, you will probably crash your program� and
-	possibly your computer's operating system as well� a very nasty type of error!
+	try to use the pointer before giving it a valid value, you will probably crash your program and
+	possibly your computer's operating system as well a very nasty type of error!
 
 
 	There is an important convention that most C programmers follow when working with pointers: A
