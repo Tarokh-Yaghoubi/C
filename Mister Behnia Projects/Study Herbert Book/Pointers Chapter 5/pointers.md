@@ -2,21 +2,21 @@
 <h3> Tarokh Yaghoubi , Jacob </h3>
 
 
-```
+<h4>
 
 	The correct understanding and use of pointers is crucial to successful C programming. There are 
 	several reasons for this: First, pointers provide the means by which functions can modify their 
 	calling arguments. Second, pointers support dynamic allocation. Third, pointers can improve the 
 	efficiency of certain routines.
 
-```
+</h4>
 
 - **Pointers provide support for dynamic data structures, such as binary trees and linked lists**
 - **Pointers are one of the strongest but also one of the most dangerous features in C.**
 - **A pointer containing an invalid value can cause your program to crash.**
 - **It is easy to use pointers incorrectly, causing bugs that are very difficult to find.**
 
-```
+<h4 color="blue">
 
 	A pointer is a variable that holds a memory address . This address is the location of another object (typically another variable) 
 	in memory . if one variable is meant to keep the address of another variable , the first variable is said to point to the second 
@@ -25,9 +25,9 @@
 	A pointer variable is defined like : { data_type *name } - the type can be any data type ( int , float , char , double ..... )
 	The name of the pointer variable is specified by name .
 
-```
+</h4>
 
-```
+<h4>
 
 	The base type of the pointer defines the type of object to which the pointer will point. Technically, 
 	any type of pointer can point anywhere in memory. However, all pointer operations are done relative 
@@ -37,11 +37,11 @@
 	actually contains.) Therefore, when you declare a pointer, you must make sure that its type is 
 	compatible with the type of object to which you want to point .
 
-```
+</h4>
 
 <h2 color="blue">The Pointer Operators</h2>
 
-```
+<h4>
 
 	There are two pointer operators : * and & . The & is a unary operator that returns the memory address of its operand.
 	m = &count; -> keeps the internal address of variable count (it has nothing to do with its value) in pointer variable 'm';
@@ -58,7 +58,7 @@
 
 	You can think of * as "at address" , so you can read q = *m; as "q recieves the value at address m ";
 
-```
+</h4>
 
 - **Pointer Expressions** : ***In general, expressions involving pointers conform to the same rules as other expressions. This section examines a few special aspects of pointer expressions, such as assignments, conversions, and arithmetic***
 
