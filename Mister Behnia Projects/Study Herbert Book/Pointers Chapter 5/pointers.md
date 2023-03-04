@@ -67,7 +67,7 @@
 
 <h2 color="blue"> Pointer Conversion </h2>
 
-```
+<h4>
 
 	In C, it is permissible to assign a void * pointer to any other type of pointer. It is also permissible to 
 	assign any other type of pointer to a void * pointer. A void * pointer is called a generic pointer. The 
@@ -75,8 +75,8 @@
 	function to specify a parameter that is capable of receiving any type of pointer argument without 
 	reporting a type mismatch.
 
-```
-```
+</h4>
+<h4>
 
 	The preceding example reinforces the rule stated earlier: Pointer operations are performed relative to 
 	the base type of the pointer. While it is technically permissible for a pointer to point to some other 
@@ -88,7 +88,8 @@
 	an integer. However, you must use an explicit cast, and the result of such a conversion is 
 	implementation defined and may result in undefined behavior. (A cast is not needed when 
 	converting zero, which is the null pointer.)
-```
+
+</h4>
 
 
 <h2 color="blue">Pointers and Arrays in C programming</h2>
