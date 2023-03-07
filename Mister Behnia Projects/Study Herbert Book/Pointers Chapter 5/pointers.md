@@ -301,16 +301,70 @@ in programming, C programmers often use pointers to access array elements. </spa
 <h2 color="blue">What does (PC) Program Counter mean ? </h2>
 
 ```
-	A program counter (PC) is a CPU register in the computer processor which has the address of the next instruction to be executed from memory.
-	It is a digital counter needed for faster execution of tasks as well as for tracking the current execution poin
+	A program counter (PC) is a CPU register in the computer processor which has the address
+	of the next instruction to be executed from memory. It is a digital counter needed for faster
+	execution of tasks as well as for tracking the current execution poin
 
-	All instructions as well as data in memory have a specific address. As each instruction is processed, the software application responsible 
-	updates the program counter with the upcoming instructions' address which needs to be fetched. 
-	The program counter in turn passes this information to the memory address register as part of the execution cycle/standard fetch.
-	The program counter increases the stored value by one as the next instruction is fetched. If the computer is reset or restarts, 
-	the program counter usually reverts to the value of zero.
+	All instructions as well as data in memory have a specific address. As each instruction is processed,
+	the software application responsible updates the program counter with the upcoming instructions' address
+	which needs to be fetched. 
+	The program counter in turn passes this information to the memory address register as part of 
+	the execution cycle/standard fetch.
+	The program counter increases the stored value by one as the next instruction is fetched. 
+	If the computer is reset or restarts, the program counter usually reverts to the value of zero.
 
 ```
 
 <p color="red"><b> What's Heap Memory ?  In certain programming languages including C and Pascal , a heap is an area of pre-reserved computer main storage ( memory ) that a program process can use to store data in some variable amount that won't be known until the program is running </b></p>
 
+```
+	char *p = "Hello C programmers !";
+
+	As you can see, p is a pointer, not an array. This raises a question: Where is the string constant
+	"hello world" being held? Since p is not an array, it can't be stored in p. Yet,
+	the string is obviously being stored somewhere. The answer to the question is found in the way C
+	compilers handle string constants. The C compiler creates what is called a string table, which stores
+	the string constants used by the program. Therefore, the preceding declaration statement places the
+	address of "hello world", as stored in the string table, into the pointer p. Throughout a program, p
+	can be used like any other string .
+
+	for example the following program is perfectly valid : 
+
+```
+<br />
+
+```
+
+	#include "stdio.h"
+	#include "string.h"
+
+	char *p = "Hello C programmers";
+
+	int main(void) {
+
+		register int t;
+
+		/* print the string forward and backwards */
+
+		printf("%s\n", p);
+		for (t=strlen(p) - 1; t > -1; t--) printf("%c ", p[t]);
+
+		return 0;
+
+	}
+
+```
+
+<h1 color="blue">Pointers to Functions</h1>
+
+```
+	A particularly confusing yet powerful feature of C is the function pointer. A function has a physical
+	location in memory that can be assigned to a pointer. This address is the entry point of the function
+	and it is the address used when the function is called. Once a pointer points to a function, 
+	the function can be called through that pointer. Function pointers also allow functions to be
+	passed as arguments to other functions.
+	
+	You obtain the address of a function by using the functions name without '()' Parantheses 
+	(This is similar to the way an array's address is obtained when only the array name without indexes is used)
+
+```
