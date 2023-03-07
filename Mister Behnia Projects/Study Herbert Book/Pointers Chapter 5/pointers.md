@@ -416,7 +416,7 @@ in programming, C programmers often use pointers to access array elements. </spa
 and return an int result <br> The parentheses around p are necessary in order for the
 compiler to properly interpret this declaration. You must use a similar form <br> when declaring other
 function pointers, although the return type and parameters of the function may differ .</h4>
-<br />
+
 <h4>Next, examine the check() function. It declares three parameters: two character pointers, a and b,
 and one function pointer, cmp. Notice that the function pointer is declared using the same format as
 was p inside main(). Thus, cmp is able to receive a pointer to a function that takes two 
