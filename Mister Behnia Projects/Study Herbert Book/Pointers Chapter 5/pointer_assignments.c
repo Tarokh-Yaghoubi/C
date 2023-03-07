@@ -4,9 +4,14 @@
 
 // void wrong_assignment(void);
 
+
+void print_number(void);
+
 int main(void)
 {
 	// wrong_assignment();
+
+	print_number();
 
 	char db[5] = { 'h', 'w', 'c', 'a'  };
 	char* ptrarray[10];
@@ -110,3 +115,15 @@ int main(void)
 //	printf("the (incorrect) value of x is : %f", y);
 //
 //}
+
+void print_number(void)
+{
+	char* str = "Hello C programmers !";
+
+	register int t;
+
+	printf("%s \n", str);
+
+	for (t = strlen(str) - 1; t > -1; t--) printf("%c ", str[t]);
+	printf("\n");
+}
