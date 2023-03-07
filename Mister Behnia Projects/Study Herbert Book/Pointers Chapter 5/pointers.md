@@ -42,7 +42,7 @@
 
 ```
 
-<h2 color="blue">The Pointer Operators</h2>
+<h1 color="blue">The Pointer Operators</h1>
 
 ```
 
@@ -69,7 +69,7 @@
 <h2 color="red">Pointer Assignments</h2>
 <p>You can use a pointer on the right-hand side of an assignment statement to assign its value to another pointer. When both pointers are the same type, the situation is straightforward.</p>
 
-<h2 color="blue"> Pointer Conversion </h2>
+<h1 color="blue"> Pointer Conversion </h1>
 
 ```
 
@@ -95,7 +95,7 @@
 ```
 
 
-<h2 color="blue">Pointers and Arrays in C programming</h2>
+<h1 color="blue">Pointers and Arrays in C programming</h1>
 
 <span color="red">There is a close relationship between pointers and arrays</span>
 <br />
@@ -145,7 +145,7 @@ in programming, C programmers often use pointers to access array elements. </spa
 <br />
 
 
-## Arrays of Pointers , in C programming 
+<h1> Arrays of Pointers , in C programming </h1> 
 
 <span color="red">Pointers can be arrayed like any other data type </span> 
 <br />
@@ -219,7 +219,7 @@ in programming, C programmers often use pointers to access array elements. </spa
 	}
 ```
 
-<h2 color="gray">Initializing Pointers</h2>
+<h1 color="gray">Initializing Pointers</h1>
 
 ```
 	After a nonstatic, local pointer is declared but before it has been assigned a value, it contains an
@@ -298,7 +298,7 @@ in programming, C programmers often use pointers to access array elements. </spa
 	}
 
 ```
-<h2 color="blue">What does (PC) Program Counter mean ? </h2>
+<h1 color="blue">What does (PC) Program Counter mean ? </h1>
 
 ```
 	A program counter (PC) is a CPU register in the computer processor which has the address
