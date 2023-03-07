@@ -408,3 +408,8 @@ in programming, C programmers often use pointers to access array elements. </spa
 	}
 
 ```
+<br />
+
+<p color="red">Let's take a closer look at the program</p>
+
+<h4> int (*p)(const char *, const char *); <br> This declaration tells the compiler that 'p' is a pointer to a function that has two const char * </h4>
