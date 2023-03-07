@@ -413,4 +413,6 @@ in programming, C programmers often use pointers to access array elements. </spa
 <p color="red">Let's take a closer look at the program</p>
 
 <h4> int (*p)(const char *, const char *); <br> This declaration tells the compiler that 'p' is a pointer to a function that has two const char * parameters
-and return an int result</h4>
+and return an int result <br> The parentheses around p are necessary in order for the
+compiler to properly interpret this declaration. You must use a similar form when declaring other
+function pointers, <br> although the return type and parameters of the function may differ.</h4>
