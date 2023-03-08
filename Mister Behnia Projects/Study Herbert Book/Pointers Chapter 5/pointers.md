@@ -517,7 +517,7 @@ comparison function in different cases. Two sample program runs are shown here :
 <h4>Therefor , C <b><i>Dynamic Memory Allocation</i></b> can be defined as a procedure in which the size of a data structure (like array) <br>
 is changed during the runtime .</h4>
 <h4>C provides some functions to achieve these tasks. There are 4 library functions provided by C defined under <b>"stdlib.h"</b> header file to facilitate dynamic memory allocation in C programming. They are: </h4>
-<br>
+
 - **malloc()**
 - **calloc()**
 - **free()**
