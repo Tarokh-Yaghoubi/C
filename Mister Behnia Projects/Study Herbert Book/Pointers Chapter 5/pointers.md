@@ -614,7 +614,7 @@ is changed during the runtime .</h4>
 
 ```
 
-<p> color="red"<b>An Example by calloc :</b></p>
+<p color="red"><b>An Example by calloc :</b></p>
 
 ```
 	
