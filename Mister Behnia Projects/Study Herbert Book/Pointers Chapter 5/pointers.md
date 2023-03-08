@@ -753,3 +753,91 @@ is changed during the runtime .</h4>
 <p color="blue"><b>Enter the number of elements : <br> 6 <br> The number of elements is : 6 <br> Memory successfully allocated using calloc and malloc <br>The elements of the array allocated using malloc are : 1 2 3 4 5 6 <br> ------------ <br> The elements of the array allocated using calloc are : 1 2 3 4 5 6 <br> ------------ <br> free the memory allocated by malloc <br> malloc memory is free <br> free the memory allocated by calloc <br> calloc memory is free</b></p>
 
 
+<h1 color="red">Reallocate - realloc()</h1>
+<p color="red"><b>"realloc" or "re-allocation" method in C is used to dynamically change the memory allocation of a previously allocated memory</b></p>
+
+<h4>If the memory previously allocated with the help of malloc or calloc is insufficient, realloc can be used to dynamically <b>re-allocate</b> memory. re-allocation of memory maintains the already present value and new blocks will be initialized with the default garbage value</h4>
+
+<p color="blue"><b>Syntax :</b></p>
+
+```
+	ptr = realloc(ptr, newSize);
+
+	where ptr is reallocated with new size 'newSize'.
+
+```
+
+<p color="blue"><b>realloc() Example :</b></p>
+
+```
+
+	/* re-allocation in C programming , 
+
+	Dynamically change the memory allocation of a previously allocated memory using malloc or calloc */
+
+	// Tarokh Yaghoubi , Jacob 
+
+	#include <stdio.h>
+	#include <string.h>
+	#include <stdlib.h>
+	#include <ctype.h>
+
+	int main()
+	{
+		// this pointer will hold the base address of the block created 
+
+		int* ptr;
+		int n, i;
+
+		// Get the number of the elements for the array 
+
+		n = 5;
+		printf("Entered number of elements : %d \n", n);
+	
+		ptr = (int*)calloc(n, sizeof(int));
+	
+		if (ptr == NULL)
+		{
+			printf("Memory not allocated , \n");
+			exit(0);
+		}
+		else
+		{
+			printf("Memory Successfully allocated using calloc \n");
+
+			for (i = 0; i < n; i++)
+			{
+				ptr[i] = i + 1;
+			}
+
+			printf("The elements of the array are : \n");
+			for (i = 0; i < n; i++)
+				printf("%d ", ptr[i]);
+
+
+			// Get the new size of the array for re-allocation 
+
+
+			n = 10;
+
+			ptr = realloc(ptr, n * sizeof(int));
+
+			printf("\n Memory was successfully re-allocated \n");
+
+			for (i = 5; i < n; i++)
+				ptr[i] = i + 1;
+
+			printf("The elements of the array are : \n");
+			for (i = 0; i < n; i++)
+				printf("%d ", ptr[i]);
+
+
+			free(ptr);
+		}
+
+
+		return 0;
+
+	}
+
+```
