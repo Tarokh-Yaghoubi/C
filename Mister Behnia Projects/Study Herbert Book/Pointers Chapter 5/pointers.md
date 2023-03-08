@@ -749,3 +749,7 @@ is changed during the runtime .</h4>
 	}	
 
 ```
+
+<p color="blue"><b>Enter the number of elements : <br> 6 <br> The number of elements is : 6 <br> Memory successfully allocated using calloc and malloc <br>The elements of the array allocated using malloc are : 1 2 3 4 5 6 <br> ------------ <br> The elements of the array allocated using calloc are : 1 2 3 4 5 6 <br> ------------ <br> free the memory allocated by malloc <br> malloc memory is free <br> free the memory allocated by calloc <br> calloc memory is free</b></p>
+
+
