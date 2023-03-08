@@ -445,3 +445,80 @@ those that compute mathematical operations (sine, cosine, tangent, etc.), perfor
 system resources. Instead of having a large switch statement with all of these functions listed in it,
 an array of function pointers can be created. In this approach, the proper function is selected by its
 index.</h4>
+
+<p color="red">Look at this example : </p>
+<br />
+```
+	#include stdio.h
+	#include ctype.h
+	#include stdlib.h
+	#include string.h
+	
+	void check(char *a, char *b,
+	int (*cmp)(const char *, const char *));
+	int compvalues(const char *a, const char *b);
+
+	int main(void)
+	{
+		char s1[80], s2[80];
+		printf ("Enter two values or two strings.\n");
+		
+		gets (s1);
+		gets(s2);
+		
+		if(isdigit(*sl)) {
+
+			printf(''Testing values for equality.\n");
+			check(s1, s2, compvalues);
+		}	
+		
+		else {
+			printf("Testing strings for equality.\n");
+			check(s1, s2, strcmp);
+		}
+	return 0;
+	
+	}
+
+	void check(char *a, char *b,
+	int (*cmp)(const char *, const char *))
+	{
+		if(!(*cmp)(a, b)) printf("Equal");
+		else printf("Not Equal");
+	
+	}
+	
+	int compvalues(const char *a, const char *b)
+	{
+		if(atoi(a)==atoi(b)) return 0;
+		else return 1;
+	}
+
+```
+
+<h4>In this program, if you enter a string that begins with a digit, compvalues() is passed to check().
+Otherwise, strcmp() is used. Since check() calls the function that it is passed, it can use a different
+comparison function in different cases. Two sample program runs are shown here : </h4>
+
+<p color="blue">Enter two values or two strings.<br>Test<br>Test<br>Testing strings for equality.</p>
+
+<br>
+
+<h1>Dynamic Memory Allocation in C</h1>
+<h2 color="red">malloc() , calloc() , free() , realloc()</h2>
+<p color="red">Since C is a structured language, it has some fixed rules for programming. One of them includes changing the size of an array. An array is a collection of items stored at contiguous memory locations.</p>
+<h4>int nums[9]; <br>As it can be seen the length (size) of the array above is 9 But what if there is a requirement to change this length (size). For Example :</h4>
+
+-**If there is a situation where only 5 elements are needed to be entered in this array. In this case, the remaining 4 indices are just wasting memory in this array. So there is a requirement to lessen the length (size) of the array from 9 to 5.**
+-**Take another situation. In this, there is an array of 9 elements with all 9 indices filled. But there is a need to enter 3 more elements in this array. In this case, 3 indices more are required. So the length (size) of the array needs to be changed from 9 to 12.**
+<br>
+<p color="red">This procedure is referred to as <b>Dynamic Memory Allocation in C</b></p>
+<h4>Therefor , C <b><i>Dynamic Memory Allocation</i></b> can be defined as a procedure in which the size of a data structure (like array) <br>
+is changed during the runtime .</h4>
+<h4>C provides some functions to achieve these tasks. There are 4 library functions provided by C defined under <b>"stdlib.h"</b> header file to facilitate dynamic memory allocation in C programming. They are: </h4>
+<br>
+-***malloc()***
+-***calloc()***
+-***free()***
+-***realloc()***
+<br>
