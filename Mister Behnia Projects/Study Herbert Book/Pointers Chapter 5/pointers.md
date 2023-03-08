@@ -424,4 +424,24 @@ const char * arguments and returns an int result. Like the declaration for p,
 the parentheses around the *cmp are necessary for the compiler to interpret this statement correctly.</h4>
 <h4>When the program begins, it assigns p the address of strcmp(), the standard string comparison
 function. Next, it prompts the user for two strings, and then it passes pointers to those strings along with p to check(),
-which compares the strings for equality. Inside check(), the expression</h4>
+which compares the strings for equality. Inside check(), the expression :</h4>
+<p color="red">(*cmp)(a, b)</p>
+<h4>This calls the function strcmp() , which is pointed to by 'cmp' , with the arguments {a , b} . The parentheses around
+*cmp are necessary. This is one way to call a function through a pointer. A second, simpler syntax,
+as shown here, can also be used : </h4>
+<p color="red">cmp(a , b);</p>
+<h4>The reason that you will frequently see the first style is that it tips off anyone reading your code that
+
+a function is being called through a pointer (that is, that cmp is a function pointer, not the name of a
+function). Also, the first style was the form originally specified by C.
+</h4>
+<p color="red">Note : You can call check by using strcmp() directly , as shown here : </p>
+<p color="blue">check (s1, s2, strcmp) <br>This eliminates the need for an additional pointer variable, in this case.</p>
+<h4>You may wonder why anyone would write a program like the one just shown. Obviously, nothing is
+gained, and significant confusion is introduced. However, at times it is advantageous to pass
+functions as parameters or to create an array of functions. For example, when an interpreter is
+written, the parser (the part that processes expressions) often calls various support functions, such as
+those that compute mathematical operations (sine, cosine, tangent, etc.), perform I/O, or access
+system resources. Instead of having a large switch statement with all of these functions listed in it,
+an array of function pointers can be created. In this approach, the proper function is selected by its
+index.</h4>
