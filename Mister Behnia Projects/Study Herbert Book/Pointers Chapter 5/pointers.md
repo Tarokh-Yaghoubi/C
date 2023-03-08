@@ -423,4 +423,5 @@ was p inside main(). Thus, cmp is able to receive a pointer to a function that t
 const char * arguments and returns an int result. Like the declaration for p, 
 the parentheses around the *cmp are necessary for the compiler to interpret this statement correctly.</h4>
 <h4>When the program begins, it assigns p the address of strcmp(), the standard string comparison
-function. Next, it prompts the user for two strings, and then it passes</h4>
+function. Next, it prompts the user for two strings, and then it passes pointers to those strings along with p to check(),
+which compares the strings for equality. Inside check(), the expression</h4>
