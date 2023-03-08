@@ -529,4 +529,4 @@ is changed during the runtime .</h4>
 <h2 color="red">Malloc or Memory Allocation</h2>
 <h4>The "malloc" or "memory allocation" method in C is used to dynamically allocate a single large block of memory with the specified size. It returns a pointer of type void which can be cast into a pointer of any form. It doesn’t Initialize memory at execution time so that it has initialized each block with the default garbage value initially .</h4>
 
-<p color="red"><b>Syntax :</b><br>ptr = (cast-type*)malloc(byte-size)<br><b>For Example:</b>ptr = (int*) malloc(100 * sizeof(int));</p>
+<p color="red"><b>Syntax :</b><br>ptr = (cast-type*)malloc(byte-size)<br><b>For Example:</b><br>ptr = (int*) malloc(100 * sizeof(int));</p>
