@@ -586,3 +586,82 @@ is changed during the runtime .</h4>
 }
 
 ```
+
+<p color="red"><b>OutPut :</b></p>
+
+```
+	Enter number of elements: 5
+	Memory successfully allocated using malloc.
+	The elements of the array are: 1, 2, 3, 4, 5,
+
+```
+
+<p color="red">"calloc" or "contiguous allocation" method in C is used to dynamically allocate the specified number of blocks of memory of the specified type. it is very much similar to malloc() but has two different points and these are: </p>
+
+- **It initializes each block with a default value "0"**
+- **It has two parameters or arguements as compared to malloc()**
+
+<p color="blue"><b>Synax and Example : </b></p>
+
+```
+	ptr = (cast-type*)calloc(n, element-size);
+	here, n is the no. of elements and element-size is the size of each element.
+
+	Example :
+
+	ptr = (float*) calloc(25, sizeof(float));
+	This statement allocates contiguous space in memory for 25 elements each with the size of the float.
+
+```
+
+<p> color="red"<b>An Example by calloc :</b></p>
+
+```
+	
+	/* Dynamic Memory Allocation in C programming */
+	// Tarokh Yaghoubi , Jacob 
+
+	#include <stdio.h>
+	#include <string.h>
+	#include <stdlib.h>
+	#include <ctype.h>
+
+	int main()
+	{
+		int* ptr;
+		int i, n;
+
+		printf("Enter the number of elements : \n");
+
+		scanf("%d", &n);
+
+		printf("The number of elements is : %d \n", n);
+	
+		ptr = (int*)calloc(n, sizeof(int));
+
+		if (ptr == NULL)
+		{
+			printf("Memory Not Allocated using calloc \n");
+			exit(0);
+		}
+		else
+		{
+
+			printf("Memory is successfully allocated using calloc \n");
+
+			for (i = 0; i < n; i++)
+			{
+				ptr[i] = i + 1;
+			}
+
+			printf("The elements of the array are : \n");
+
+			for (i = 0; i < n; ++i)
+				printf("%d ", ptr[i]);
+		}
+
+	return 0;
+
+}
+
+```
