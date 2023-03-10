@@ -841,3 +841,21 @@ is changed during the runtime .</h4>
 	}
 
 ```
+
+- **Some Other Notes on Dynamic Memory Allocation**
+
+<p color="red">If there is not enough memory to satisfy the <b>malloc()</b>request , an allocation failure occurs and malloc() return a <b>NULL</b></p>
+<p color="blue">The code fragment shown here allocates 1000 bytes of contigous memory :</p>
+
+```
+	
+	#include <stdlib.h>
+
+	char* p;
+	p = malloc(1000);	/* get 1000 bytes */
+
+```
+
+<p color="red">After assignment p points to the first 1000 bytes of free memory</p>
+<p color="red">The Next Example allocates space for 50 integers  , Notice the use of <b>sizeof()</b> to ensure portability</p>
+
