@@ -527,7 +527,7 @@ is changed during the runtime .</h4>
 
 <h1 color="blue">C malloc() Method , Memory Allocation using malloc()</h1>
 <h2 color="red">Malloc or Memory Allocation</h2>
-<h4>The "malloc" or "memory allocation" method in C is used to dynamically allocate a single large block of memory with the specified size. It returns a pointer of type void which can be cast into a pointer of any form. It doesn’t Initialize memory at execution time so that it has initialized each block with the default garbage value initially .</h4>
+<h4>The "malloc" or "memory allocation" method in C is used to dynamically allocate a single large block of memory with the specified size. It returns a pointer of type void which can be cast into a pointer of any form. It doesn't Initialize memory at execution time so that it has initialized each block with the default garbage value initially .</h4>
 
 <p color="red"><b>Syntax :</b><br>ptr = (cast-type*)malloc(byte-size)<br><b>For Example:</b><br>ptr = (int*) malloc(100 * sizeof(int));</p>
 <p>Since the size of int is 4 bytes , this statement will <b>allocate 400 bytes of memory</b> . And , the pointer <b>ptr</b> hold the address of the first byte in the allocated memory</p>
@@ -967,10 +967,10 @@ is changed during the runtime .</h4>
 - **Restrict introduced after C99 Standard**
 - **The restrict keyword is used for pointer declarations as a type quantifier of the pointer .**
 - **This keyword does not add new functionalities. Using this the programmer can inform about an optimization that compiler can make.**
-- **When we use restrict with a pointer ptr, it tells the compiler that ptr is the only way to access the object pointed by it, in other words, there’s no other pointer pointing to the same object i.e. restrict keyword specifies that a particular pointer argument does not alias any other and the compiler doesn’t need to add any additional checks**
+- **When we use restrict with a pointer ptr, it tells the compiler that ptr is the only way to access the object pointed by it, in other words, there's no other pointer pointing to the same object i.e. restrict keyword specifies that a particular pointer argument does not alias any other and the compiler doesn't need to add any additional checks**
 - **If a programmer uses Restrict and Volatile the above condition , it will generate some undefined behavior .**
 - **Restrict is not supported by C++ . it as a C-only keyword**
 
 <br><br><br><br>
 
-<h5>tarokh yaghoubi , C programming , march 2023 <br> tarokhyaghoubi@protonmail.com </h5>
+<h6 align=center>tarokh yaghoubi , C programming , march 2023 <br> tarokhyaghoubi@protonmail.com </h6>
