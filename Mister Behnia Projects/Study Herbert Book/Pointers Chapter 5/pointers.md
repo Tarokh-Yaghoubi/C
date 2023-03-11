@@ -1,4 +1,4 @@
-<h1 color="blue"> Pointers in C programming , Herbert Shieldt Book </h1>
+<h1 color="blue"> Pointers in C programming </h1>
 <h3> Tarokh Yaghoubi , Jacob </h3>
 
 
@@ -857,5 +857,120 @@ is changed during the runtime .</h4>
 ```
 
 <p color="red">After assignment p points to the first 1000 bytes of free memory</p>
+<p color="red">Note : Notice that no type cast is used to assign the return value of <b>malloc()</b> to p . As explained a void* pointer is automatically converted to the type of the pointeron the left side of an assignment . However This automatic conversion does not occur in C++ and an explicit type cast is needed .</p>
+<p color="red"><b>Example :</b></p>
+
+
+```
+
+	#include <stdlib.h>
+
+	char* p;
+	p = (int*) malloc(1000);	/* This will also work in C++ :) */ 
+
+```
+
 <p color="red">The Next Example allocates space for 50 integers  , Notice the use of <b>sizeof()</b> to ensure portability</p>
 
+```
+	
+	#include <stdlib.h>
+
+	char* ptr;
+	ptr = (int*) malloc(50 * sizeof(int));
+
+```
+
+<p color="red"><b>Note:</b> Since the memory is not infinite you must check the value return by malloc() to make sure it is not NULL before using the pointer . using a NULL pointer will certainly crash your program <br> This is the proper way to test the pointer : </p>
+
+```
+	
+	#include <stdlib.h>
+
+	char *ptr;
+	p = (int*) malloc(10 * sizeof(int));
+
+	if (!p) {
+		printf("Out of memory \n");
+
+		exit(1);
+	}
+
+	return 0;
+
+```
+
+- **You can use other type of error handlers instead of calling exit() , just make sure you do not use the pointer if it is null !**
+
+- **Never CALL free() with an invalid argument , this will damage the allocation system**
+
+- **C's dynamic allocation subsystem is used in conjunction with pointers to support a variety of important programming constructs , such as linked lists , binary trees and dynamically allocated arrays**
+
+<p color="red">You can dynamically allocate multi-dimensional arrays , to do so you must declare a pointer that specifies all but the left most array dimension :</p>
+
+```
+
+	#include <stdio.h>	
+	#include <stdlib.h>	
+
+	int pwr(int ,int);
+
+	int main(void)
+	{
+
+		register int i , j;
+
+		/* Declare and array that has 10 ints in each row . */
+
+		int (*p)[10];
+
+		/* allocate memory to hold a 4 * 10 array */
+
+		p = (int*) malloc(40 * sizeof(int));
+
+		if (!p)
+		{
+			printf("Memory Request failed \n");
+			exit(1);
+		}
+
+		for (j = 1; j < 11; j++)
+			for (i = 1; i < 5; i++) p[i - 1][j - 1] = pwr(j , i);
+
+		for (j = 1; j < 11; j++)
+		{
+			for (i = 1; i < 5; i++) printf("%10d ", p[i - 1][j - 1]);
+			printf("\n");
+		}
+
+		return 0;
+	}
+
+
+	int pwr(int a, int b)
+	{
+		register int t = 1;
+
+		for (; b; b--) t = t * a;
+
+		return t;
+	}
+
+```
+
+<p color="red">As mentioned above , you must cast all pointer conversions in C++ , therefor , C programmers who want their code to be compatible with C++ , always cast the pointer conversions</p>
+<p color="blue"><b>Example : </b><br> ptr = (int (*)[10]) malloc(40 * sizeof(int))</p>
+<p color="red"><b>As explained earlier, many C programmers cast all pointer conversions for the sake of compatibility with C++</b></p>
+
+<h1>Restrict Keyword :</h1>
+
+- **Restrict introduced after C99 Standard**
+- **The restrict keyword is used for pointer declarations as a type quantifier of the pointer .**
+- **This keyword does not add new functionalities. Using this the programmer can inform about an optimization that compiler can make.**
+- **When we use restrict with a pointer ptr, it tells the compiler that ptr is the only way to access the object pointed by it, in other words, there’s no other pointer pointing to the same object i.e. restrict keyword specifies that a particular pointer argument does not alias any other and the compiler doesn’t need to add any additional checks**
+- **If a programmer uses Restrict and Volatile the above condition , it will generate some undefined behavior .**
+- **Restrict is not supported by C++ . it as a C-only keyword**
+
+<br><br><br><br>
+
+<p>tarokh yaghoubi , C programming , march 2023</p>
