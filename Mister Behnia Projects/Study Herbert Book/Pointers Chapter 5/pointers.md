@@ -1,6 +1,6 @@
 <h1 color="blue" align=center> Pointers in C programming </h1>
 <h3 align=center> Tarokh Yaghoubi , Jacob </h3>
-
+<br>
 
 ```
 
