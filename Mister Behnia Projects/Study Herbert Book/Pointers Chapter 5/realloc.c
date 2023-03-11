@@ -11,6 +11,7 @@ Dynamically change the memory allocation of a previously allocated memory using 
 
 int main()
 {
+	
 	// this pointer will hold the base address of the block created 
 
 	int* ptr;
