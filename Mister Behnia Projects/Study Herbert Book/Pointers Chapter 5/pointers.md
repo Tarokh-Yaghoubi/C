@@ -1,5 +1,5 @@
-<h1 color="blue"> Pointers in C programming </h1>
-<h3> Tarokh Yaghoubi , Jacob </h3>
+<h1 color="blue" align=center> Pointers in C programming </h1>
+<h3 align=center> Tarokh Yaghoubi , Jacob </h3>
 
 
 ```
