@@ -13,8 +13,11 @@ int main(void)
 
 	print_number();
 
+	int mynum = 5;
+	int mynum1 = 11;
 	char db[5] = { 'h', 'w', 'c', 'a'  };
 	char* ptrarray[10];
+	int* myptrarray[5];
 
 	int number;
 	number = 586;
@@ -22,10 +25,11 @@ int main(void)
 	int* ptrtoNum, ** ptr2Ptr;
 	ptrtoNum = &number;
 	ptr2Ptr = &ptrtoNum;
-
+	myptrarray[1] = &mynum;
+	myptrarray[2] = &mynum1;
 
 	ptrarray[1] = db;
-
+		
 	char *p;
 	char nm = 't';
 	char* ptr;
@@ -36,7 +40,10 @@ int main(void)
 
 	p = db;
 	printf("The address of db embedded in p : %p \n", p);
-	
+	printf("-------------------\n");
+	printf(" %d %p", *myptrarray[1], myptrarray[1]);
+
+	printf(" %d %p", *myptrarray[2], myptrarray[2]);
 	p++;
 
 	if (specific > p) printf("specific points to higher mem than p | { specific : [%p] - p : [%p] } \n", specific, p);
@@ -118,6 +125,7 @@ int main(void)
 
 void print_number(void)
 {
+
 	char* str = "Hello C programmers !";
 
 	register int t;
@@ -126,4 +134,5 @@ void print_number(void)
 
 	for (t = strlen(str) - 1; t > -1; t--) printf("%c ", str[t]);
 	printf("\n");
+
 }
