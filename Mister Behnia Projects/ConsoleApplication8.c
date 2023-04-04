@@ -7,6 +7,7 @@
 #include <stdlib.h>
 #include <string.h>
 
+/* This file is full of bugs , they'll be solved ASAP */
 
 int main()
 {
