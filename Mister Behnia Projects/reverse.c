@@ -6,12 +6,12 @@ void Rever(char* str);
 
 int main()
 {
-	char name[1024];
+	char* name;
 	scanf("%[^\n]s", name);
 	Rever(name);
 
 	//	printf(" \n %d ", len);
-
+	printf("%s", name);
 	return 0;
 
 }
@@ -19,7 +19,7 @@ int main()
 void Rever(char* str)
 {
 	char* p, * ptr;
-	char tmp[1024];
+	char* tmp;
 
 	int len = 0;
 	p = str;
@@ -32,7 +32,7 @@ void Rever(char* str)
 		tmp[h] = p[i];
 	}
 	// ptr = tmp;
-	sprintf(str, tmp);
-	printf("%s", str);
+	sprintf(str,"%s", tmp);
+	
 
 }
