@@ -1,2 +1,3 @@
-# C
-This repository belongs to C programming . 
+# C programming 
+
+C programs i write will be pushed here ,
