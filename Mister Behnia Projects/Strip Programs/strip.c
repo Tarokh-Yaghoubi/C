@@ -2,6 +2,9 @@
 #include <string.h>
 #include <stdlib.h>
 
+
+ // Strip Method Program in C
+ 
 int main()
 {
     int i = 0;

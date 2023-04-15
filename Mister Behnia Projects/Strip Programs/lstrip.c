@@ -6,7 +6,7 @@ char* strstrip(char* s);
 
 int main()
 {
-    char name[] = "   tarokh";
+    char name[] = "   tarokh     yaghoubi";
     printf("%s", strstrip(name));
     return 0;
 }
@@ -17,12 +17,12 @@ char* strstrip(char* s)
     size_t size;
     char* end;
 
-    size = strlen(s);
+    size = strlen(s); // 9
 
     if (!size)
         return s;
 
-    end = s + size - 1;
+    end = s + size - 1; // s + 22
     while (end >= s && isspace(*end))
         end--;
     *(end + 1) = '\0';
