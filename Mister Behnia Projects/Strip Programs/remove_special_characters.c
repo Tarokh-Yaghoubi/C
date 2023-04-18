@@ -13,7 +13,7 @@ int index_beginning(char* ptr);
 
 int main()
 {
-	char name[] = "@# tarokh is a good boy  @@#!@##$";
+	char name[] = "@# THIS IS A TEST FROM C  @@#!@##$";
 	char* ptr;
 	ptr = &name[0];
 	int len = strlen(name);
