@@ -18,13 +18,13 @@ typedef unsigned char uint8;
 int main(int argc, char* argv[])
 {
 	// defined unsigned char 
-	int size = 0;
+
 	int max = 12;
 	char zero[13];
 	char buffer[12] = "12345678";
 	if (strlen(buffer) > 12)
-		return;
-	//char zero[12] = "000000000000";
+		return -1;
+
 	int len = strlen(buffer);
 	max = max - len;
 	for (int i = 0; i < max; i++)
