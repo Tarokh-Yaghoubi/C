@@ -4,7 +4,7 @@
 #include <WinSock2.h>
 #include <WS2tcpip.h>
 #include <Windows.h>
-#pragma 
+
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
@@ -36,6 +36,6 @@ int main()
 	{
 		printf("everything is ok");
 	}
-
+	
 	// In windows you can not use close() to close a socket , you need to use closesocket() instead
 }
