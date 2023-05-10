@@ -31,7 +31,7 @@ int main()
 
 	struct addrinfo address_info;	 // addrinfo struct 
 	struct addrinfo* serveinfo;
-	struct sockaddr socket_Address;	 // sockaddr struct , ai_addr points to sockaddr in addrinfo
+//	struct sockaddr socket_Address;	 // sockaddr struct , ai_addr points to sockaddr in addrinfo
 	struct sockaddr_in sa;	 // Socket Address Internet , a parallel structure to deal with the struct sockaddr 
 	struct sockaddr_in6 sa6;
 	struct in6_addr ia6 = IN6ADDR_ANY_INIT;
