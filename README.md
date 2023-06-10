@@ -1,3 +1,3 @@
 # C programming 
 
-C programs i write will be pushed here ,
+Once Upong a Time , I decided to learn C ... 
