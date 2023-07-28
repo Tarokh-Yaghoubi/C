@@ -147,4 +147,43 @@
 
 ```
 
+- **Process Creation and Program Execution**
+
+```
+
+	A process can ' create ' a new process using the fork() system call . The process that calls fork() is referred to as the parent process ,
+	and the new process is referred to as the child process . The KERNEL creates the child process by making a duplicate of the parent process.
+	The child inherits copies of the parents Data, Stack and Heap segments , which it may then modify independently of the parent's copies . 
+	{ The program text , which is placed in memory marked as read-only , is shared by the two processes }
+
+
+	The child process goes on either to execute a different set of functions in the same code as the parent , or , frequently , to use the 
+	execve() system call to load and execute an entirely new program . An execve() call destroys the existing text, data, stack and heap segments 
+	, replacing them with new segments based on the code of the new program . 
+
+	Several related C library functions are layered on top of execve() , each providing a slightly different interface to the same funcionality ,
+	all of these functions have names starting with the string 'exec' , and where the differences dont matter , we will use the notation exec to 
+	refer generally to these functions . Be aware that there is not actual function with the name exec() . 
+ 
+
+```
+
+- **Process ID and Parent Process ID**
+
+```
+
+	Each process has a unique integer process identifier (PID) . Each process also has a parent process identifier (PPID) attribute .
+	which identifies the process that requested kernel to create this process .
+
+```
+
+- **Process termination and Termination status**
+
+```
+
+	A Process can terminate in one of the two ways : by requesting its own termination using the exit() system call , or the related exit()
+	library function  . Or being killed by the delivery of a signal . In either case , the process yields a " Termination Status ", A small
+	non-negative integer value that is available 
+
+```
 
