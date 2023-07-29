@@ -183,7 +183,90 @@
 
 	A Process can terminate in one of the two ways : by requesting its own termination using the exit() system call , or the related exit()
 	library function  . Or being killed by the delivery of a signal . In either case , the process yields a " Termination Status ", A small
-	non-negative integer value that is available 
+	non-negative integer value that is available for inspection by the parent process using the wait() system call . In the case of a call to
+	exit() , the process explicitly specifies it's own termination status . If a process is killed by a signal , the termination status is set 
+	accordingly to the type of signal that caused the death of the process .
+
+	- Sometimes we'll refer to the argument passed to exit() as the exit status of the process , as distinct from the termination status , which is 
+	either the value passed to exit() , or an indication of the signal that killed the process . 
+
+	- The termination status of 0 indicates that the process succeeded , and a nonzero status indicates that some error occured  .
+	
+```
+
+- **Process User and Group Identifiers**
+
+```
+
+	Each process has a number of associates user ID's (UID's) and group ID's (GID's).
+
+	- Real User ID : The user to which the process belongs , A new process inherits this ID from it's parent .
+	- Read Group ID : The group to which the process belongs , A new process inherits this ID from it's parent .
+	
+	note : a login shell takes it Real IDs from the corresponding fields in the system password file . 
+
+	- Effective user ID and Effective group ID : These two ID's are used in determining the permissions that a process has 
+	when accessing protected resources such as files and Interprocess Communication (IPC) objects . 
+	Typically , the processes Effective IDs have the same value as the corresponding real IDs . Changing the effective IDs is
+	a mechanism that allows a process to assume the privileges of another user or group , as described in a moment . 
+
+	- Spplementary group IDs : These IDs identify additional groups to which a process belongs . A new process inherits its
+	supplementary group IDs from its parent . A login shell gets its supplementary group IDs from the system group file 
+
+```
+
+- **Privileged Processes**
+
+```
+	Traditionally , on UNIX systems , a privileged process is the one whose EFFECTIVE USER ID is 0 (SUPERUSER) . such a process bypasses 
+	the permission restrictions normally applied by the KERNEL . By contrast , the term unprivileged or nonprivileged is applied to processes
+	run by other users . Such processes have a nonzero effective user ID and must abide by the permission rules enforces by the KERNEL .
+
+	A process may be privileged because it was created by another privileged process . for example by a login shell started by root (SUPERUSER) .
+	Another way a process may become privileged is by the set-user-id mechanism . which allows a process to assume an effective usr ID that is the 
+	same as the usr ID of the program file that is executing .  
+
+```
+
+- **The init Process**
+
+```
+	When booting the system , the KERNEL creates a special process called init , "the parent of ALL PROCESSES", which is derived from the the 
+	program file /sbin/init . All processes on the system are created using fork() , either by init or by one of its decendants . 
+	The init process always has the process ID 1 and runs with superuser privilege . The init process cant be killed (no even by the superuser) .
+
+	init terminates only when the system is shutdown . The main task of init is to create and monitor a range of processes required by a running system .
+
+```
+
+- **Daemon Processes**
+
+```
+	A daemon is a special purpose process that is created and handled by the system in the same way as other processes, but which is distinguished by 
+	the following characteristics :
+
+	- It is Long-Lived : A Daemon Process is often started at system boot and remains in existence until the system is shutdown . 
+	- It runs in the background : It has no controlling terminal from which it can read input or which it can write output . 
+
+
+	Examples of Daemon Processes include syslog , which records messages in the system log , and httpd , which served web-pages via 
+	The Hyper Text Transfer Protocol (HTTP) .
+
+```
+
+- **Environment List**
+
+```
+	Each Process has an environment list , which is a set of environment variables that are maintained within the user-space memory of the process 
+	Each element of this list consists of a name and an associated value . when a process is created vie fork() , it inherits a copy of its parents 
+	environment . The environment provides a mechanism for a parent process to communicate information to a child process . 
+	 When a process replaces the program that it is running using exec(), the new
+	program either inherits the environment used by the old program or receives a
+	new environment specified as part of the exec() call.
+
+	C programs can access the environment using an external variable (char **environ),
+	and various library functions allow a process to retrieve and modify values in its
+	environment.
 
 ```
 
