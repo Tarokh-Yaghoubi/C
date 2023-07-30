@@ -268,5 +268,24 @@
 	and various library functions allow a process to retrieve and modify values in its
 	environment.
 
+
+	Environment variables are used for various purposes . for example , the shell defines and uses a range of variables that can be accessed by scripts 
+	and programs executed from the shell . 
+
 ```
+
+- **Resource Limit**
+
+```
+	Each process consumes resources , such as open files , memory and CPU time . using setrlimit() system call , a process can establish upper limits on 
+	its consumption of various resources . Each resource limit has two values : a soft limit , which limits the amount of the resource that the process may 
+	consume , and a hard limit , which is ceiling of the value to which the soft limits may be adjusted . An unprivileged process may change its soft limit 
+	for a particular resource to any value in the range from zero up to the corresponding hard limit , but can only lower its hard limit . 
+
+	when a new process is created with fork() , it inherits copies of its parents resource limit settings . 
+
+
+```
+
+<br />
 
