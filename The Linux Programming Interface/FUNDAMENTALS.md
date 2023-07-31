@@ -289,3 +289,19 @@
 
 <br />
 
+- **Memmory Mappings**
+
+```
+	The mmap() system call creates a new memory mapping in the calling processes virtual address space .
+
+	Mappings fall into two categories :
+
+	- A "File Mapping" maps a region of a file into the calling processes virtual memory . Once mapped , the files contents can be accessed 
+	by operations on the bytes in the corresponding memory regions . The pages of the mapping are automatically loaded from the file as required 
+
+
+	- By contrast, an "Anonymous Mapping" does not have a corresponding file . Instead , the pages of the mapping are initialized to 0 .
+
+	The memory in one processes mapping may be shared with mappings in other processes . This can occur either because two processes ,
+
+```
