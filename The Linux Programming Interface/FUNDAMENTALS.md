@@ -302,6 +302,43 @@
 
 	- By contrast, an "Anonymous Mapping" does not have a corresponding file . Instead , the pages of the mapping are initialized to 0 .
 
-	The memory in one processes mapping may be shared with mappings in other processes . This can occur either because two processes ,
+	The memory in one processes mapping may be shared with mappings in other processes . This can occur either because two processes map
+	the same region of a file or because a child process created by fork() inherits a mapping from its parent .
+
+	when two or more processes share the same pages , each process may see the changes made by other processes to the contents of the page ,
+	depending on whether the mapping is created as private or shared . when a mapping is private , modifications to the contents of the mapping 
+	are not visible to other processes and are not carried through to the underlying file . 
+	when a mapping is shared , modifications to the contents of the mapping are visible to other processes sharing the same mapping and are 
+	carried through to the underlying file . 
+
+	Memory Mappings serve a variety of purposes , including initialization of a process's text segment from the corresponding segment of an 
+	executable file , allocation of new (zero-filled) memory , file I/O (memory-mapped I/O) , and Interprocess Communication (IPC) via a shared mapping .
+
+```
+
+- **Interprocess Communication and Synchronization**
+
+```
+	A running Linux system consists of numerous processes , many of which operate independently of each other . Some processes, however, 
+	cooperate to achieve their intended purposes , and these processes need methods of communicating with one another and synchronizing 
+	their actions . 
+	One way for processes to communicate is by reading and writing information in disk files . However , for many applications , this is 
+	too slow and inflexible . 
+
+	Therefor, Linux, like all modern UNIX implementations , provides a rich set of mechanisms for Interprocess Communication (IPC) , including 
+	the following :
+
+	- signals : which are used to indicate that an event has occurred .
+	- pipes : (familiar to shell users as | operator) and FIFOs, which can be used to transfer data between processes . 
+	- sockets : which can be used to transfer data from one process to another , either on the same host computer 
+	or on different hosts connected by a network .
+	
+	- file locking : which allows a process to lock regions of a file in order to prevent other processes from reading and updating  
+	the file contents .
+	- message queues : which are used to exchange messages (packets of data) between processes .
+	- semaphores : which are used to synchronize the actions of processes .
+	- shared memory : which allows two or more processes to share a piece of memory , when one process changes the content of the shared memory 
+	all of the other processes can immediately see the changes .  
+
 
 ```
