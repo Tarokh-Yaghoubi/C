@@ -342,3 +342,42 @@
 
 
 ```
+
+- **Signals**
+
+```
+
+	Signal is one of the IPC (Interprocess Communication) methods . 
+	Signals are often described as "Software Interrupts" . The arrival of a signal informs a process that some event or exceptional condition has occured 
+	There are various Types of Signals , Each of which identifies a different event or condition . Each signal type is identified by a different integer 
+	Signals are Defined by a symbolic name of the form SIGxxxx . 
+
+	Signals are sent to a process by the KERNEL , by another process (with suitable permissions), or by the process itself 
+	(for example a process can terminate itself) . 
+
+	We said that the KERNEL might sent a signal to a process . so these are some of the situations that KERNEL may send a signal to a process : 
+	- The user typed the interrupt character (usually Ctrl+C) .
+	- One of the process's children has terminated .
+	- A timer (alarm clock) set by the process has expired .
+	- The process has attempted to access an invalid memory address .
+ 
+
+	Within the SHELL , the 'kill' command can be used to send a signal to a process , kill command used to be a murderer before (it could only kill a process) , but now 
+	it can send many other signals . 
+	The kill() system call provides the same facility within the programs . 
+
+	When a process recieves a signal , it takes one of the following actions , depending of the signal :
+
+	- It ignores the signal 
+	- It is killed by the signal 
+	- It is suspended until later being resumed by receipt of a special-purpose signal 
+
+	For most signal types , instead of accepting the default signal action , a program can choose to ignore the signal (useful if the default action for the signal 
+	is something other than being ignored ) , or to establish a "signal handler" . 
+	A 'signal handler' is a programmer-defined function that is automatically invoked when the signal is delivered to the process . This functions permorms some action 
+	appropriate to the condition that generated the signal . In the interval between the time it is generated and the time it is delivered , a signal is said to be 
+	'pending' for a process . Normally , a pending signal is delivered as soon as the receiving process is next scheduled to run , or immediately if the process is 
+	already running . However , it is also possible to "block" a signal by adding it to the process's 'signal mask' . if a process is generated while it is blocked ,
+	it remains pending until it is later unblocked (i.e., removed from the 'signal mask').  
+
+```
