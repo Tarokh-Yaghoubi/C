@@ -381,3 +381,42 @@
 	it remains pending until it is later unblocked (i.e., removed from the 'signal mask').  
 
 ```
+<br />
+
+- **Threads**
+
+```
+
+	In modern UNIX implementations , each process can have multiple threads of execution , One way of envisaging threads is as a set of processes that share 
+	the same virtual memory , as well as a range of other attributes , Each 'thread' is executing the same program code and shares the same data area and hip .
+	However, each 'thread' has its own stack containing local variables and function call linkage information . Threads can communicate with each other via
+	the global variables that they share .
+	The threading API provides 'condition variables' and 'Mutexes', which are primitives that enable the threads of a process to communicate and synchronize 
+	their actions , in particular , their use of shared variables .
+	Threads can also communicate with one another using the IPC (Interprocess communication) and synchronization mechanisms described above .
+
+	The primary advantages of using threads are that they make it easy to share data (via global variables) between cooperating threads and that some 
+	algorithms transpose more naturally to a multithreaded implementation than to a multiprocess implementation . Furthermore , a multithreaded application 
+	can transparently take advantage of possiblities for parallel processing on multiprocessero hardware .  
+
+```
+<br />
+
+- **Realtime**
+
+```
+	'Realtime applications' are those that need to respond in a timely fashion to input . Frequently , such input comes from an external sensor or a specialized 
+	input device , and output takes the form of controlling some external hardware . Examples of applications with 'realtime' resonse requirements include automated 
+	assembly line , Bank ATMs , and Aircraft Navigation Systems . Although many realtime applications require rapid responses to input , the defining factor is 
+	that the response guaranteed to be delivered within a certain deadline time after the triggering event . 
+
+	The provision of realtime responsiveness , specially where short response times are demanded , requires support from 'the underlying operating system' .
+	Most operating systems do not natively provide such support because the requirements of realtime responsiveness can conflict with the requirements of 
+	multiuser time sharing operating systems . Traditional UNIX implementations are not realtime operating systems (RTOS) , although realtime variants have been devised .
+
+	Realtime variants of Linux have also been created , and recent Linux KERNELs are moving toward full native support for realtime applications . 
+
+	POSIX.1b defined a number of extensions to POSIX.1 for the support of realtime applications. These include asynchronous I/O, shared memory, memory-mapped files, 
+	memory locking, realtime clocks and timers, alternative scheduling policies, realtime signals, message queues, and semaphores.
+
+```
