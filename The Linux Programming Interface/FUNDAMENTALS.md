@@ -9,7 +9,7 @@
 - **Programs**
 - **Processes**
 - **Memory Mapping**
-- **Interprocess Communication , (IPC)**
+- **Inter Process Communication , (IPC)**
 - **Signals**
 - **Threads**
 - **Realtime**
@@ -206,11 +206,11 @@
 	note : a login shell takes it Real IDs from the corresponding fields in the system password file . 
 
 	- Effective user ID and Effective group ID : These two ID's are used in determining the permissions that a process has 
-	when accessing protected resources such as files and Interprocess Communication (IPC) objects . 
+	when accessing protected resources such as files and Inter process Communication (IPC) objects . 
 	Typically , the processes Effective IDs have the same value as the corresponding real IDs . Changing the effective IDs is
 	a mechanism that allows a process to assume the privileges of another user or group , as described in a moment . 
 
-	- Spplementary group IDs : These IDs identify additional groups to which a process belongs . A new process inherits its
+	- Supplementary group IDs : These IDs identify additional groups to which a process belongs . A new process inherits its
 	supplementary group IDs from its parent . A login shell gets its supplementary group IDs from the system group file 
 
 ```
@@ -312,11 +312,11 @@
 	carried through to the underlying file . 
 
 	Memory Mappings serve a variety of purposes , including initialization of a process's text segment from the corresponding segment of an 
-	executable file , allocation of new (zero-filled) memory , file I/O (memory-mapped I/O) , and Interprocess Communication (IPC) via a shared mapping .
+	executable file , allocation of new (zero-filled) memory , file I/O (memory-mapped I/O) , and Inter Process Communication (IPC) via a shared mapping .
 
 ```
 
-- **Interprocess Communication and Synchronization**
+- **Inter Process Communication and Synchronization**
 
 ```
 	A running Linux system consists of numerous processes , many of which operate independently of each other . Some processes, however, 
@@ -325,7 +325,7 @@
 	One way for processes to communicate is by reading and writing information in disk files . However , for many applications , this is 
 	too slow and inflexible . 
 
-	Therefor, Linux, like all modern UNIX implementations , provides a rich set of mechanisms for Interprocess Communication (IPC) , including 
+	Therefor, Linux, like all modern UNIX implementations , provides a rich set of mechanisms for Inter Process Communication (IPC) , including 
 	the following :
 
 	- signals : which are used to indicate that an event has occurred .
@@ -347,7 +347,7 @@
 
 ```
 
-	Signal is one of the IPC (Interprocess Communication) methods . 
+	Signal is one of the IPC (Inter Process Communication) methods . 
 	Signals are often described as "Software Interrupts" . The arrival of a signal informs a process that some event or exceptional condition has occured 
 	There are various Types of Signals , Each of which identifies a different event or condition . Each signal type is identified by a different integer 
 	Signals are Defined by a symbolic name of the form SIGxxxx . 
@@ -393,7 +393,7 @@
 	the global variables that they share .
 	The threading API provides 'condition variables' and 'Mutexes', which are primitives that enable the threads of a process to communicate and synchronize 
 	their actions , in particular , their use of shared variables .
-	Threads can also communicate with one another using the IPC (Interprocess communication) and synchronization mechanisms described above .
+	Threads can also communicate with one another using the IPC (Inter Process communication) and synchronization mechanisms described above .
 
 	The primary advantages of using threads are that they make it easy to share data (via global variables) between cooperating threads and that some 
 	algorithms transpose more naturally to a multithreaded implementation than to a multiprocess implementation . Furthermore , a multithreaded application 
