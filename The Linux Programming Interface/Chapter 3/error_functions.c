@@ -15,11 +15,11 @@ static void terminate(Boolean useExit3)
     depending on the value of 'useExit3'. */
     s = getenv("EF_DUMPCORE");
     if (s != NULL && *s != '\0')
-    abort();
+        abort();
     else if (useExit3)
-    exit(EXIT_FAILURE);
+        exit(EXIT_FAILURE);
     else
-    _exit(EXIT_FAILURE);
+        _exit(EXIT_FAILURE);
 }
 
 static void outputError(Boolean useErr, int err, Boolean flushStdout, const char *format, va_list ap)

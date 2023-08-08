@@ -22,6 +22,7 @@
 
 
 #include "error_functions.h"    /* Declares our error-handling functions */
+#include "get_num.h"
 
 typedef enum { FALSE, TRUE } Boolean;
 
