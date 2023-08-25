@@ -22,7 +22,7 @@ int main(int argc, char* argv[])
   
   /* open the file in read-only mode */
 
-  fd = open(filename, O_RDONLY);
+  fd = open(filename, O_RDWR);
   if (fd == -1)
   {
     perror("Error opening the file");
@@ -41,10 +41,15 @@ int main(int argc, char* argv[])
   }
 
   /* Determin the access mode and the flag  */
-
+  printf("The value of flags is : %ld \n", (long)flags);
+  printf("The value of O_ACCMODE is : %ld\n", (long)O_ACCMODE);
+  printf("The value of O_NONBLOCK is : %ld\n", (long)O_NONBLOCK);
+  
   accessMode = flags & O_ACCMODE;
   isNonBlocking = flags & O_NONBLOCK;
-
+  printf("The value of accessMode is : %x\n", accessMode);
+  printf("The value of O_RDWR is : %d\n", O_RDWR);
+  
   printf("Access Mode : ");
   switch(accessMode) {
 
