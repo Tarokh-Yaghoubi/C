@@ -29,6 +29,10 @@ int main(int argc, char* argv[])
     }
 
     flags = fcntl(fd, F_GETFL);
+    flags |= O_APPEND;
+    if (fcntl(fd, F_SETFL, flags) == -1)
+        perror("fcntl");
+    flags = fcntl(fd, F_GETFL);
     accessMode = flags & O_ACCMODE;
     printf("flag value is : %ld\n", (long)flags);
     printf("The access mode is : %ld\n", (long)accessMode);
@@ -43,6 +47,9 @@ int main(int argc, char* argv[])
         case O_RDWR:
             printf(("The file is both readable and writeable \n"));
             break;
+        case O_ASYNC:
+            printf("The file is ASYNC\n");
+            break;
         default:
             printf("the file access is something else \n");
             break;
@@ -54,6 +61,6 @@ int main(int argc, char* argv[])
 
 void something_else(void)
 {
-    printf("tarokh is a good man \n");
+    printf("the man is a good man\n");
 }
       
