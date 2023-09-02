@@ -9,33 +9,51 @@
 #include <fcntl.h>
 #include <errno.h>
 
+void something_else(void);
 
 int main(int argc, char* argv[])
 {
+    int accessMode = 0;
+    int flags = 0;
+    int fd;
+    int retValue = 0;
 
-  /* a program to get a file flags and show file permissions */
+    fd = open(argv[1], O_TRUNC | O_CREAT | O_RDWR, S_IRUSR | S_IWUSR);
 
-  int flags = 0;
-  int retValue = 0;
-  int fd;
-
-  fd = open(argv[1], O_TRUNC | O_CREAT | O_RDWR, S_IRUSR | S_IWUSR);
-
-  if (argc < 2)
-    perror("open: what is the file name ? ");
+    if (argc < 2)
+          perror("open: what is the file name ? ");
   
-  if (fd == -1)
-  {
-    perror("open : could not open the file");
-  }
+    if (fd == -1)
+    {
+          perror("open : could not open the file");
+    }
 
-  flags = fcntl(fd, F_GETFL);
-  printf("flag value is : %ld\n", (long)flags);
+    flags = fcntl(fd, F_GETFL);
+    accessMode = flags & O_ACCMODE;
+    printf("flag value is : %ld\n", (long)flags);
+    printf("The access mode is : %ld\n", (long)accessMode);
+    switch (accessMode) {
+        case O_WRONLY:
+            printf("The file is write only \n");
+            break;
+        case O_RDONLY:
+            printf("The file is read only \n");
+            break;
 
-  close(fd);
-  return 0;
-
+        case O_RDWR:
+            printf(("The file is both readable and writeable \n"));
+            break;
+        default:
+            printf("the file access is something else \n");
+            break;
+    }
+    close(fd);
+    something_else();
+    return 0;
 }
 
-
+void something_else(void)
+{
+    printf("tarokh is a good man \n");
+}
       
