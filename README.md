@@ -1,3 +1,3 @@
 # C programming 
 
-Once Upong a Time , I decided to learn C ... 
+C programming Language , My Code Practices , LInux programming interface , Documents and so on .
