@@ -8,9 +8,9 @@
 	t::t::t.:X; . 8;:;;.t::t::S8.    %;;:;;.t::; %8t.S@;;.;;:;;.
 	:;;:;;:t@.  @.:;;:;;:;;:;;S      .@:;:;;:;;:;;:;8::@t;:;;::;
 	:;::;:@@ X::;;::;::;:;::;        .@S;:;;:;:;:;:;:8S 88;:;:;;
-	;;:;:8@ %@:;;:;;:;;:;;:tS;..       :t;::;::;::t::t:X S@;:;;.
-	.;;:8S  t.t:.t::t::t.;;t:XS         S.;t.;t.;;.t;.t:S ;8;::t
-	t::X8 :t:t.;t.;;.;;.t:;; @8@@        %;.t::t::t.:t.;;X.8S;;.
+	;;:;:8@ %@:;;:;;:;;:;;:tS          :t;::;::;::t::t:X S@;:;;.
+	.;;:8S  t.t:.t::t::t.;;t:           S.;t.;t.;;.t;.t:S ;8;::t
+	t::X8 :t:t.;t.;;.;;.t:;;            %;.t::t::t.:t.;;X.8S;;.
 	:;; .@S;;:;::;::t::;:; .    88.      .%;:;;:;;:;;:;;:;.  :;;
 	;:S..::;:;;;:;;;:;;;:%.               t8;:;:;:;:;:;:;;X;.t;:
 	;;. t%;::;::;:;;:;:: ..              ..8@;:;::;:;;:;;::8 t%:
@@ -87,3 +87,32 @@
 **        - Various properties of the file, including its size and timestamps relating to different types of 
 **          file operations .
 */
+
+/*
+** Here we are overlooking the distinction between on-disk and in-memory representations of an i-node .
+** The on-disk i-node records the persistent attributes of a file such as its type, permissions , and timestamps .
+** When a file is accessed , and in-memory copy of the i-node is created, and this version of the i-node records 
+** a count of the open file descriptions referring to the i-node and the major and minor ID's of the device from 
+** which the i-node was copied . The in-memory i-node also records various ephermal attributes that are associated 
+** with a file while it is open, such as <file locks> .
+*/
+
+// NOTE
+/*
+    (1)
+    Two different file descriptors that refer to the same open file description share a file offset value 
+    Therefor , if the file offset is changed via one file descriptor (as a consequence of calls to read(), write()
+    or lseek()), this change is visible through the other file descriptor . This applies both when the two file 
+    descriptors belong to the same process and when they belong to a different process . 
+
+    (2)
+    Similar scope rules apply when retrieving and changing the open file status flags (e.g, O_APPEND, O_ASYNC, ...)
+    using fcntl() F_GETFL and F_SETFL operations .
+
+    (3)
+    By contrast, the file descriptor flags (the close-on-exec flag) are private to the process and file descriptor .
+    Modifying these flags does not affect other file descriptors in the same process or a different process .
+
+*/
+
+
