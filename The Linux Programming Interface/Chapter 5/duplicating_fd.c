@@ -45,4 +45,35 @@
 **
 **	close(2);	// Frees file descriptor 2
 **	newfd = dup(1);
+**
+**	This code works only if descriptor 0 was open . To make the above code simpler, and to ensure we always get the
+**	file descriptor we want, we can use dup2().
+**
+**	#include <unistd.h>
+**	int dup2(int oldfd, int newfd);		// RETURNS (new) file descriptor on success , or -1 on error
+*/
+
+/*
+**	The dup2() system call makes a duplicate of the file descriptor given in oldfd using the descriptor number supplied
+**	in newfd . if the file descriptor specified in newfd is already open, dup2() closes it first . (Any error that occurs
+**	during this close is silently ignored; safer programming practice is to explicitly close() newfd if it is open before the call
+**	to dup2().)
+**
+**	we could simplify the preceding calls to close() and dup() to the following  :
+**
+**	dup2(1, 2);
+**
+**	A successful dup2() call returns the number of the duplicate descriptor (i.e., the value passed in newfd).
+*/
+
+/*
+**	If oldfd is not a valid descriptor , then dup2() fails with the error EBADF and newfd is not closed .
+**	If oldfd is a valid file descriptor , and oldfd and newfd have the same value , then dup2() does nothing .
+**	newfd is not closed , and dup2() will return newfd as its function result .
+*/
+
+/*
+**	A further interface that provides some extra flexibility for duplicating file descriptors in the fcntl() F_DUPFD operation :
+
+
 */
