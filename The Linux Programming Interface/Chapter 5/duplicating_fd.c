@@ -74,6 +74,22 @@
 
 /*
 **	A further interface that provides some extra flexibility for duplicating file descriptors in the fcntl() F_DUPFD operation :
-
-
+**
+**	newfd = fcntl(oldfd, F_DUPFD, startfd);
+**
+**	This call makes a duplicate of oldfd by using the lowest unused file descriptor greater than or equal to startfd.
+**	This is useful if we want a guarantee that the new descriptor (newfd) falls in a certain range of values.
+**	Calls to dup() and dup2() can always be recoded as calls to close() and fcntl(), although the former calls are more
+**	concise .
+**
+**	NOTE : that some of the errno error codes returned by dup2() and fcntl() differ, as described in the manual pages .
 */
+
+/*
+**	Duplicated file descriptors share the same file offset value and status flags in their shared open file description
+**	However, the new file descriptor has its own set of file descriptor flags, and its close-on-exec flag (FD_CLOEXEC)
+**	is always turned off. The interfaces that we describe next allow explicit control of the new file descriptors 
+**	close-on-exec flag .
+*/
+
+
