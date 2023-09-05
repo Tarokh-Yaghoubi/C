@@ -88,8 +88,173 @@
 /*
 **	Duplicated file descriptors share the same file offset value and status flags in their shared open file description
 **	However, the new file descriptor has its own set of file descriptor flags, and its close-on-exec flag (FD_CLOEXEC)
-**	is always turned off. The interfaces that we describe next allow explicit control of the new file descriptors 
+**	is always turned off. The interfaces that we describe next allow explicit control of the new file descriptors
 **	close-on-exec flag .
 */
 
+/*
+**	The dup3() system call performs the same task as dup2(), but adds an additional argument , flags, that is a bit mask
+**	that modifies the behavior of the system call .
+**
+**	#define _GNU_SOURCE
+**	#include <unistd.h>
+**
+**	int dup3(int oldfd, int newfd, int flags);		// RETURNS (new) file descriptor on success , or -1 on error .
+**
+**	Currently , dup3() only supports one flag , FD_CLOEXEC
+*/
+
+#define _GNU_SOURCE
+#include <fcntl.h>	/*Obtain O_* constant definitions */
+#include <unistd.h>
+
+#include <stdarg.h>
+#include <stdlib.h>
+#include <stdio.h>
+
+int dup_test(char*);
+int t_api_printf(const char*, ...);
+int main(int argc, char* argv[]) {
+
+	// main
+	int age = 19;
+	dup_test(argv[1]);
+	t_api_printf("[tar_debug] first log written");
+	t_api_printf("[tar_debug] second log written");
+	t_api_printf("[tar_debug] third log is my age %d", age);
+	t_api_printf("[tar_debug] this is the last log , %x", 0x0545);
+	return 0;
+}
+
+int dup_test(char* filename) {
+	int exitcode = 0;
+	int fd = open(filename, O_WRONLY | O_CREAT | O_TRUNC, 0666);
+	printf("fd file descriptor is : %ld\n", (long )fd);
+	if (fd == -1)	{
+		perror("Failed to open file");
+		exit(EXIT_FAILURE);
+	}
+
+	// Save the current standard output (file descriptor 1)
+	int saved_stdout = dup(1);
+	printf("saved_stdout is : %ld\n", (long )saved_stdout);
+	if (saved_stdout == -1) {
+		perror("Failed to duplicate standard output");
+		close(fd);
+		exit(EXIT_FAILURE);
+	}
+
+	// Redirect standard output to the file .
+
+	if (dup2(fd, 1) == -1) {
+		perror("Failed to redirect standard output");
+		close(fd);
+		exit(EXIT_FAILURE);
+	}
+
+	// Now, Standard output is redirected to the file .
+
+	printf("This will be written to the file\n.");
+
+	// Restore Standard output to the terminal
+
+	if (dup2(saved_stdout, 1) == -1) {
+		perror("Failed to restore standard output");
+		close(fd);
+		exit(EXIT_FAILURE);
+	}
+
+	// Now . standard output is back to the terminal
+
+	printf("This will be shown on the terminal\n");
+
+	// Close the file and exit
+
+	close(fd);
+
+	return exitcode;
+
+}
+
+/*
+int t_api_printf(const char* format, ...)
+{
+
+	int exitcode = 0;
+	int fd = open("output.log", O_RDWR | O_APPEND | O_CREAT, 1666);
+	if (fd == -1)
+	{
+		perror("Failed to open file");
+		exit(EXIT_FAILURE);
+	}
+
+	int save_stdout = dup(1);
+	if (save_stdout == -1)
+	{
+		perror("Failed to duplicate standard output");
+		close(fd);
+		exit(EXIT_FAILURE);
+	}
+
+	if (dup2(fd, 1) == -1)
+	{
+		perror("Failed to redirect standard output");
+		close(fd);
+		exit(EXIT_FAILURE);
+	}
+
+        va_list args;
+        va_start(args, format);
+        vfprintf(stdout, format, args); // Print to stdout
+        va_end(args);
+
+	if (dup2(save_stdout, 1) == -1)
+	{
+		perror("Failed to restore standard output");
+		close(fd);
+		exit(EXIT_FAILURE);
+	}
+
+	close(fd);
+	return exitcode;
+}
+*/
+
+
+
+int t_api_printf(const char* format, ...)
+{
+    int exitcode = 0;
+    int fd = open("output.log", O_RDWR | O_APPEND | O_CREAT, 1666);
+    if (fd == -1)
+    {
+        perror("Failed to open file");
+        exit(EXIT_FAILURE);
+    }
+
+    fflush(stdout); // flush stdout before redirecting it
+    if (dup2(fd, STDOUT_FILENO) == -1)
+    {
+        perror("Failed to redirect standard output");
+        close(fd);
+        exit(EXIT_FAILURE);
+    }
+
+    va_list args;
+    va_start(args, format);
+    vfprintf(stdout, format, args); // Print to stdout
+    fprintf(stdout, "\n");
+    va_end(args);
+
+    fflush(stdout); // flush stdout after writing to it
+    if (dup2(STDOUT_FILENO, fd) == -1)
+    {
+        perror("Failed to restore standard output");
+        close(fd);
+        exit(EXIT_FAILURE);
+    }
+
+    close(fd);
+    return exitcode;
+}
 
