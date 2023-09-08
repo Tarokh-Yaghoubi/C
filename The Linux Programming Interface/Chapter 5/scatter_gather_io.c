@@ -28,3 +28,6 @@
  *          size_t iov_len;         // Number of bytes to transfer to/from buffer
  *      };
  * */
+
+#include <sys/uio.h>
+
