@@ -83,3 +83,4 @@ ftruncate_example(void)
            nfilename, (long ) newFileSize);
 
 }
+
