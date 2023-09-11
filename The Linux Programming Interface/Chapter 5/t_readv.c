@@ -6,17 +6,16 @@
 #include <fcntl.h>
 
 
-int
-main(int argc, char *argv[])
-{
+int         /* K&R Style */
+main(int argc, char *argv[]) {
+    int fd = 0;
 
-  int fd = 0;
-  struct iovec iov[3];
-  struct stat nyStruct;        /* First Buffer */
-  int x;        /* Second Buffer */
+    struct iovec iov[3];
+    struct stat myStruct;        /* First Buffer */
+    int x;        /* Second Buffer */
 
 #define STR_SIZE 100
-  char str[STR_SIZE];
-  ssize_t numRead, totRequired;
+    char str[STR_SIZE];
+    ssize_t numRead, totRequired;
 
-  
+}
