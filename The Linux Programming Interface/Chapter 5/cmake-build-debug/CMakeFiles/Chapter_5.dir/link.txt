@@ -1,0 +1,1 @@
+/usr/bin/gcc -g CMakeFiles/Chapter_5.dir/duplicating_fd.c.o CMakeFiles/Chapter_5.dir/fd_openfiles_rel.c.o CMakeFiles/Chapter_5.dir/getflags.c.o CMakeFiles/Chapter_5.dir/io_spec_offset.c.o CMakeFiles/Chapter_5.dir/scatter_gather_io.c.o CMakeFiles/Chapter_5.dir/t_readv.c.o CMakeFiles/Chapter_5.dir/t_truncate.c.o -o Chapter_5 

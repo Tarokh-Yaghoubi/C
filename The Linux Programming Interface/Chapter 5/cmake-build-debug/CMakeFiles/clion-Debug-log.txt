@@ -1,0 +1,4 @@
+/opt/clion-2023.2.1/bin/cmake/linux/x64/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=make -DCMAKE_C_COMPILER=gcc -DCMAKE_CXX_COMPILER=g++ -G "CodeBlocks - Unix Makefiles" -S "/home/tarokh/C/The Linux Programming Interface/Chapter 5" -B "/home/tarokh/C/The Linux Programming Interface/Chapter 5/cmake-build-debug"
+-- Configuring done (0.0s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/tarokh/C/The Linux Programming Interface/Chapter 5/cmake-build-debug
